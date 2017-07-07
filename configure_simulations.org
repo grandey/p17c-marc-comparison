@@ -55,11 +55,11 @@ ln -s /glade/scratch/bgrandey/$CASENAME/run/ scratch_run
 ./xmlchange STOP_N=8
 ./xmlchange RESUBMIT=3
 ./sed -i 's/regular/economy/g' $CASENAME.run
-$CASENAME.submit
+./$CASENAME.submit
 #+END_SRC
 
 Notes:
-- Model directory is =~/models/cesm1221_marc=.
+- Model directory is =~/models/cesm1221_marc/=.
 - =compset= is =FC5MARC=.
 - =CAM_CONFIG_OPTS= are =-phys cam5 -chem trop_marc -cosp=.
 
@@ -83,9 +83,90 @@ ln -s /glade/scratch/bgrandey/$CASENAME/run/ scratch_run
 ./xmlchange STOP_N=8
 ./xmlchange RESUBMIT=3
 ./sed -i 's/regular/economy/g' $CASENAME.run
-$CASENAME.submit
+./$CASENAME.submit
 #+END_SRC
 
 Notes:
 - Same as =p17c_marc_2000= above, but with different =$CASENAME= (and =user_nl_cam= file).
 
+** TODO =p17c_mam3_2000=
+
+#+BEGIN_SRC
+CASENAME=p17c_mam3_2000
+
+cd ~/models/cesm1_2_2_1/scripts/
+./create_newcase -case ~/cesm1_2_2_1_cases/$CASENAME -res f19_g16 -compset FC5 -mach cheyenne -pes_file pes/p720n20.xml
+
+cd ~/cesm1_2_2_1_cases/$CASENAME
+./xmlchange CAM_CONFIG_OPTS="-phys cam5 -cosp"
+./cesm_setup
+wget https://raw.githubusercontent.com/grandey/p17c-marc-comparison/master/user_nl_cam/user_nl_cam_$CASENAME
+mv user_nl_cam_$CASENAME user_nl_cam
+cp ~/models/mySourceMods/cospsimulator_intr.F90 SourceMods/src.cam/
+./$CASENAME.build
+ln -s /glade/scratch/bgrandey/$CASENAME/run/ scratch_run
+./xmlchange STOP_OPTION=nyears
+./xmlchange STOP_N=8
+./xmlchange RESUBMIT=3
+./sed -i 's/regular/economy/g' $CASENAME.run
+./$CASENAME.submit
+#+END_SRC
+
+Notes:
+- Model directory is =~/models/cesm1_2_2_1/=.
+- =compset= is =FC5=.
+- =CAM_CONFIG_OPTS= are =-phys cam5 -cosp=.
+
+** TODO =p17c_mam3_1850=
+
+#+BEGIN_SRC
+CASENAME=p17c_mam3_1850
+
+cd ~/models/cesm1_2_2_1/scripts/
+./create_newcase -case ~/cesm1_2_2_1_cases/$CASENAME -res f19_g16 -compset FC5 -mach cheyenne -pes_file pes/p720n20.xml
+
+cd ~/cesm1_2_2_1_cases/$CASENAME
+./xmlchange CAM_CONFIG_OPTS="-phys cam5 -cosp"
+./cesm_setup
+wget https://raw.githubusercontent.com/grandey/p17c-marc-comparison/master/user_nl_cam/user_nl_cam_$CASENAME
+mv user_nl_cam_$CASENAME user_nl_cam
+cp ~/models/mySourceMods/cospsimulator_intr.F90 SourceMods/src.cam/
+./$CASENAME.build
+ln -s /glade/scratch/bgrandey/$CASENAME/run/ scratch_run
+./xmlchange STOP_OPTION=nyears
+./xmlchange STOP_N=8
+./xmlchange RESUBMIT=3
+./sed -i 's/regular/economy/g' $CASENAME.run
+./$CASENAME.submit
+#+END_SRC
+
+Notes:
+- Same as =p17c_mam3_2000= above, but with different =$CASENAME= (and =user_nl_cam= file).
+
+* TODO =p17c_mam7_2000=
+
+#+BEGIN_SRC
+CASENAME=p17c_mam7_2000
+
+cd ~/models/cesm1_2_2_1/scripts/
+./create_newcase -case ~/cesm1_2_2_1_cases/$CASENAME -res f19_g16 -compset FC5 -mach cheyenne -pes_file pes/p720n20.xml
+
+cd ~/cesm1_2_2_1_cases/$CASENAME
+./xmlchange CAM_CONFIG_OPTS="-phys cam5 -chem trop_mam7 -cosp"
+./cesm_setup
+wget https://raw.githubusercontent.com/grandey/p17c-marc-comparison/master/user_nl_cam/user_nl_cam_$CASENAME
+mv user_nl_cam_$CASENAME user_nl_cam
+cp ~/models/mySourceMods/cospsimulator_intr.F90 SourceMods/src.cam/
+./$CASENAME.build
+ln -s /glade/scratch/bgrandey/$CASENAME/run/ scratch_run
+./xmlchange STOP_OPTION=nyears
+./xmlchange STOP_N=8
+./xmlchange RESUBMIT=3
+./sed -i 's/regular/economy/g' $CASENAME.run
+./$CASENAME.submit
+#+END_SRC
+
+Notes:
+- Model directory is =~/models/cesm1_2_2_1/=.
+- =compset= is =FC5=.
+- =CAM_CONFIG_OPTS= are =-phys cam5 -chem trop_mam7 -cosp=.
