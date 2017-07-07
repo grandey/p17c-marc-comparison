@@ -1,0 +1,32 @@
+#+TITLE: Configure test simulations
+#+AUTHOR: Benjamin S. Grandey
+#+OPTIONS: ^:nil
+
+* General notes
+
+** Experimental design
+For an overview of the experimental design, please see [[https://github.com/grandey/p17c-marc-comparison/blob/master/README.org][README.org]].
+
+** CESM versions
+- The MAM3 and MAM7 simulations use CESM 1.2.2.1 (CESM 1.2.2 configured for Cheyenne), found in =~/models/cesm1_2_2_1=.
+- The MARC simulations use a version of CESM 1.2.2.1 containing MARC (git commit =ff48dbe=), found in =~/models/cesm1221_marc=.
+
+** Processor layout
+A simulations will be configured with a layout of =NTASKS=720= for all model components, spread across 20 nodes.
+
+** =user_nl_cam= files
+The =user_nl_cam= files will be pulled from GitHub using =wget=.
+
+** COSP bug fix
+In order to fix [[https://bb.cgd.ucar.edu/bug-cosp-simulator][a bug in COSP]], a modified version of =cospsimulator_intr.F90= will be used. The modification is as follows:
+
+#+BEGIN_SRC 
+1974c1974
+<             mr_ccice(i,k) = sh_cldliq(i,k) + dp_cldliq(i,k)
+---
+>             mr_ccice(i,k) = sh_cldice(i,k) + dp_cldice(i,k)
+#+END_SRC
+
+** Submission to the =economy= queue
+By default, my =.run= files are configured for submission to the =regular= queue. In order to submit to the =economy= queue, the =.run= file can be modified using =sed -i 's/regular/economy/g' $CASENAME.run=.
+
