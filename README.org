@@ -1,0 +1,50 @@
+#+TITLE: p17c-marc-comparison
+#+AUTHOR: Benjamin S. Grandey
+#+OPTIONS: ^:nil
+
+** Purpose
+Configure and analyse [[http://www.cesm.ucar.edu/][CESM]] simulations in order to compare /MARC/ (the /Modal Two-Moment Mixing-State-Resolving Aerosol Model for Radiation and Climate/) and [[http://www.geosci-model-dev.net/5/709/2012/][MAM]].
+
+** Experimental design
+
+*** Comparison simulations
+In order to compare MARC, MAM3, and MAM7, five prescribed-SST simulations will be performed:
+| Casename         | Aerosol model | Aersosol (and precursor) emissions |
+|------------------+---------------+------------------------------------|
+| =p17c_marc_2000= | MARC          | year-2000                          |
+| =p17c_marc_1850= | MARC          | year-1850                          |
+| =p17c_mam3_2000= | MAM3          | year-2000                          |
+| =p17c_mam3_1850= | MAM3          | year-1850                          |
+| =p17c_mam7_2000= | MAM7          | year-2000                          |
+
+The year-2000 emissions simulations will facilitate comparison of aerosol fields, and also cloud microphysical and macrophysical fields. The year-1850 simulations will facilitate calculation of radiative flux perturbations (RFPs).
+
+The simulations will be configured as follows:
+1. *CESM 1.2.2.1* will be used. (This is CESM 1.2.2 configured to run on Cheyenne.)
+2. MARC commit *ff48dbe* will be used.
+3. Greenhouse gas concentrations and sea-surface temperatures (SSTs) will be prescribed using *year-2000 climatological values*, based on the =F_2000_CAM5= (=FC5=) component set.
+4. For the MARC and MAM3 simulations, the *RFP components* will be diagnosed following [[http://www.atmos-chem-phys.net/13/9971/2013/][Ghan (2013)]]. The "online" radiation call will include aerosol-radiation interactions; the "offline" diagnostic radiation call will calculate "clean-sky" fluxes.
+5. The *COSP* satellite simulator package will be activated.
+6. A resolution of *f19_g16* will be specified.
+7. Each simulation will be run for *32 years*, and the first two years will be excluded as spin-up. (Nudgding will not be performed.)
+8. The simulations will be performed on *Cheyenne*, using 720 processors (20 nodes).
+
+*** Timing simulations
+In order to facilitate comparison of computational performance, several timing simulations will be performed:
+| Casename         | Aerosol model | Radiation   | Notes                         |
+|------------------+---------------+-------------+-------------------------------|
+| =p17c_t_marc_r2= | MARC          | Double call | Standard MARC                 |
+| =p17c_t_marc_r1= | MARC          | Single call | Modified radiation.F90        |
+| =p17c_t_mam3_r2= | MAM3          | Double call | =rad_diag_1= in =user_nl_cam= |
+| =p17c_t_mam3_r1= | MAM3          | Single call | Standard MAM3                 |
+| =p17c_t_mam7_r2= | MAM7          | Double call | =rad_diag_1= in =user_nl_cam= |
+| =p17c_t_mam7_r1= | MAM7          | Single call | Standard MAM7                 |
+
+The simulations will configured similarly to the comparison simulations described above, albeit with the following differences:
+1. COSP will *not* be used.
+2. "*20-day* model runs with *restarts and history turned off*" will be used, following the recommendations in the [[http://www.cesm.ucar.edu/models/cesm1.2/cesm/doc/usersguide/x1516.html][CESM User's Guide.]]
+3. For each case, *five runs* will be performed in order to assess variability.
+4. For consistency, all cases will be submitted *on the same day*.
+
+** Author
+Benjamin S. Grandey, 2017, in collaboration with [[http://www.danielrothenberg.com/][Daniel Rothenberg]], [[https://eapsweb.mit.edu/people/jqj][Qinjian Jin]], and [[http://web.mit.edu/wangc/][Chien Wang]].
