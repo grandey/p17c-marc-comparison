@@ -34,7 +34,7 @@ ext_frc_specifier =
         'SO2      -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_so2_elev_2000_c090726.nc'
         'SO4      -> /glade/p/work/bgrandey/input_data_p17c/mit_aero_2000_so4_elev_1.9x2.5.nc'
 
-ext_frc_type = 'CYCLICAL
+ext_frc_type = 'CYCLICAL'
 
 srf_emis_specifier =
         'DMS      -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/trop_mozart_aero/emis/aerocom_mam3_dms_surf_2000_c090129.nc',
