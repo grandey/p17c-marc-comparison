@@ -143,7 +143,7 @@ ln -s /glade/scratch/bgrandey/$CASENAME/run/ scratch_run
 Notes:
 - Same as =p17c_mam3_2000= above, but with different =$CASENAME= (and =user_nl_cam= file).
 
-* TODO =p17c_mam7_2000=
+** TODO =p17c_mam7_2000=
 
 #+BEGIN_SRC
 CASENAME=p17c_mam7_2000
