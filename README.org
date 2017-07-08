@@ -5,6 +5,9 @@
 ** Purpose
 Configure and analyse [[http://www.cesm.ucar.edu/][CESM]] simulations in order to compare /MARC/ (the /Modal Two-Moment Mixing-State-Resolving Aerosol Model for Radiation and Climate/) and [[http://www.geosci-model-dev.net/5/709/2012/][MAM]].
 
+** Status
+In process of finalising configuration for comparison simulations.
+
 ** Experimental design
 
 *** Comparison simulations
