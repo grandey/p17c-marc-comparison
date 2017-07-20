@@ -1,7 +1,7 @@
 ;=================================================================
-; Modified version of convert_mam3_BC_OC_p17c_marc_2000.pro,
-; which originally committed to marc_input repository by darothen
-; on 8-April-2017 (commit id 895619c).
+; Modified version of convert_mam3_BC_OC_emissions.pro,
+; which was originally committed to marc_input repository by
+; darothen on 8-April-2017 (commit id 895619c).
 ; This version has been modified by B.S.Grandey in order to produce
 ; the BC/OC/VOC emissions file for *p17c_marc_2000*.
 ; The intention is for the emissions to be consistent with those
