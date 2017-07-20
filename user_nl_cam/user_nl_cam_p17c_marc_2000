@@ -23,7 +23,7 @@ MARC_ccn_diag    = .true.
 MARC_rain_check  = .false.
 MARC_init_file   = ''
 MARC_transient_emissions = .false.
-MARC_emis_file   = '/glade/p/work/bgrandey/input_data_p17c/mit_aero_2000emis_1.9x2.5.nc'
+MARC_emis_file   = '/glade/p/work/bgrandey/input_data_p17c/emis_p17c_marc_2000.nc'
 MARC_opt_table   = '/glade/p/work/bgrandey/input_data_p17c/MITaer_opt_table.nc'
 MARC_coag_table  = '/glade/p/work/bgrandey/input_data_p17c/MITaer_coag_table.nc'
 MARC_min_smax    = .false.
@@ -32,14 +32,14 @@ MARC_in_scheme   = 'meyers'
 
 ext_frc_specifier =
         'SO2      -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_so2_elev_2000_c090726.nc'
-        'SO4      -> /glade/p/work/bgrandey/input_data_p17c/mit_aero_2000_so4_elev_1.9x2.5.nc'
+        'SO4      -> /glade/p/work/bgrandey/input_data_p17c/so4_elev_p17c_marc_2000.nc'
 
 ext_frc_type = 'CYCLICAL'
 
 srf_emis_specifier =
         'DMS      -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/trop_mozart_aero/emis/aerocom_mam3_dms_surf_2000_c090129.nc',
         'SO2      -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_so2_surf_2000_c090726.nc',
-        'SO4      -> /glade/p/work/bgrandey/input_data_p17c/mit_aero_2000_so4_surf_1.9x2.5.nc'
+        'SO4      -> /glade/p/work/bgrandey/input_data_p17c/so4_surf_p17c_marc_2000.nc'
 
 srf_emis_type = 'CYCLICAL'
 
