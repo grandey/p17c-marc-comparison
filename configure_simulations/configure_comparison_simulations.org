@@ -1,4 +1,4 @@
-#+TITLE: Configure test simulations
+#+TITLE: Configure comparison simulations
 #+AUTHOR: Benjamin S. Grandey
 #+OPTIONS: ^:nil
 
@@ -33,11 +33,13 @@ To facilitate ease of access to the run directory, I like to create a symbolic l
 *** Submission to the =economy= queue
 By default, my =.run= files are configured for submission to the =regular= queue. In order to submit to the =economy= queue, the =.run= file can be modified using =sed -i 's/regular/economy/g' $CASENAME.run=.
 
-** Comparison simulations
+** Creation, configuration, and submission of simulations
 
 *** TODO =p17c_marc_2000=
 
-#+BEGIN_SRC
+#+BEGIN_SRC :tangle yes :tangle create_p17c_marc_2000.sh
+#!/bin/bash
+
 CASENAME=p17c_marc_2000
 
 cd ~/models/cesm1221_marc/scripts/
@@ -65,7 +67,9 @@ Notes:
 
 *** TODO =p17c_marc_1850=
 
-#+BEGIN_SRC
+#+BEGIN_SRC :tangle yes :tangle create_p17c_marc_1850.sh
+#!/bin/bash
+
 CASENAME=p17c_marc_1850
 
 cd ~/models/cesm1221_marc/scripts/
@@ -91,7 +95,9 @@ Notes:
 
 *** TODO =p17c_mam3_2000=
 
-#+BEGIN_SRC
+#+BEGIN_SRC #+BEGIN_SRC :tangle yes :tangle create_p17c_mam3_2000.sh
+#!/bin/bash
+
 CASENAME=p17c_mam3_2000
 
 cd ~/models/cesm1_2_2_1/scripts/
@@ -119,7 +125,9 @@ Notes:
 
 *** TODO =p17c_mam3_1850=
 
-#+BEGIN_SRC
+#+BEGIN_SRC :tangle yes :tangle create_p17c_mam3_1850.sh
+#!/bin/bash
+
 CASENAME=p17c_mam3_1850
 
 cd ~/models/cesm1_2_2_1/scripts/
@@ -145,7 +153,9 @@ Notes:
 
 *** TODO =p17c_mam7_2000=
 
-#+BEGIN_SRC
+#+BEGIN_SRC :tangle yes :tangle create_p17c_mam7_2000.sh
+#!/bin/bash
+
 CASENAME=p17c_mam7_2000
 
 cd ~/models/cesm1_2_2_1/scripts/

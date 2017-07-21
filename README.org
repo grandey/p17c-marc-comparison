@@ -53,11 +53,11 @@ The simulations will be configured similarly to the comparison simulations descr
 CLOSED: [2017-07-21 Fri 11:48]
 
 *** Still to-do
-***** TODO Design and check configuration (in =configure_simulations.org=) of *comparison* simulations
-***** TODO Submit *comparison* simulations
+***** TODO Design and check configuration (in =configure_comparison_simulations.org=) of *comparison* simulations
+***** TODO Create and submit *comparison* simulations
 ***** TODO Design and finalize =user_nl_cam= files for *timing* simulations
-***** TODO Design and finalize configuration (in =configure_simulations.org=) of *timing* simulations
-***** TODO Submit *timing* simulations
+***** TODO Design and finalize configuration of *timing* simulations
+***** TODO Create and submit *timing* simulations
 
 ** Author
 Benjamin S. Grandey, 2017, in collaboration with [[http://www.danielrothenberg.com/][Daniel Rothenberg]], [[https://eapsweb.mit.edu/people/jqj][Qinjian Jin]], and [[http://web.mit.edu/wangc/][Chien Wang]].
