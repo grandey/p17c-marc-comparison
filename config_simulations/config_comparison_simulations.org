@@ -35,11 +35,11 @@ By default, my =.run= files are configured for submission to the =regular= queue
 
 ** Creation, configuration, and submission of simulations
 
+The source code blocks below are tangled using =C-c C-v t= in order to create bash scripts named =create_<CASENAME>.sh=.
+
 *** TODO =p17c_marc_2000=
 
-#+BEGIN_SRC :tangle yes :tangle create_p17c_marc_2000.sh
-#!/bin/bash
-
+#+BEGIN_SRC :tangle yes :tangle create_p17c_marc_2000.sh :shebang #!/bin/bash
 CASENAME=p17c_marc_2000
 
 cd ~/models/cesm1221_marc/scripts/
@@ -67,9 +67,7 @@ Notes:
 
 *** TODO =p17c_marc_1850=
 
-#+BEGIN_SRC :tangle yes :tangle create_p17c_marc_1850.sh
-#!/bin/bash
-
+#+BEGIN_SRC :tangle yes :tangle create_p17c_marc_1850.sh :shebang #!/bin/bash
 CASENAME=p17c_marc_1850
 
 cd ~/models/cesm1221_marc/scripts/
@@ -95,9 +93,7 @@ Notes:
 
 *** TODO =p17c_mam3_2000=
 
-#+BEGIN_SRC #+BEGIN_SRC :tangle yes :tangle create_p17c_mam3_2000.sh
-#!/bin/bash
-
+#+BEGIN_SRC :tangle yes :tangle create_p17c_mam3_2000.sh :shebang #!/bin/bash
 CASENAME=p17c_mam3_2000
 
 cd ~/models/cesm1_2_2_1/scripts/
@@ -125,9 +121,7 @@ Notes:
 
 *** TODO =p17c_mam3_1850=
 
-#+BEGIN_SRC :tangle yes :tangle create_p17c_mam3_1850.sh
-#!/bin/bash
-
+#+BEGIN_SRC :tangle yes :tangle create_p17c_mam3_1850.sh :shebang #!/bin/bash
 CASENAME=p17c_mam3_1850
 
 cd ~/models/cesm1_2_2_1/scripts/
@@ -153,9 +147,7 @@ Notes:
 
 *** TODO =p17c_mam7_2000=
 
-#+BEGIN_SRC :tangle yes :tangle create_p17c_mam7_2000.sh
-#!/bin/bash
-
+#+BEGIN_SRC :tangle yes :tangle create_p17c_mam7_2000.sh :shebang #!/bin/bash
 CASENAME=p17c_mam7_2000
 
 cd ~/models/cesm1_2_2_1/scripts/
