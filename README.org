@@ -6,7 +6,13 @@
 Configure and analyse [[http://www.cesm.ucar.edu/][CESM]] simulations in order to compare /MARC/ (the /Modal Two-Moment Mixing-State-Resolving Aerosol Model for Radiation and Climate/) and [[http://www.geosci-model-dev.net/5/709/2012/][MAM]].
 
 ** Status
-In process of finalising configuration for comparison simulations.
+***** DONE Design and finalize =user_nl_cam= files for *comparison* simulations
+CLOSED: [2017-07-21 Fri 11:25]
+***** TODO Design and finalize configuration (in =configure_simulations.org=) of *comparison* simulations
+***** TODO Submit *comparison* simulations
+***** TODO Design and finalize =user_nl_cam= files for *timing* simulations
+***** TODO Design and finalize configuration (in =configure_simulations.org=) of *timing* simulations
+***** TODO Submit *timing* simulations
 
 ** Experimental design
 
@@ -43,7 +49,7 @@ In order to facilitate comparison of computational performance, several timing s
 | =p17c_t_mam7_r2= | MAM7          | Double call | =rad_diag_1= in =user_nl_cam= |
 | =p17c_t_mam7_r1= | MAM7          | Single call | Standard MAM7                 |
 
-The simulations will configured similarly to the comparison simulations described above, albeit with the following differences:
+The simulations will be configured similarly to the comparison simulations described above, albeit with the following differences:
 1. COSP will *not* be used.
 2. "*20-day* model runs with *restarts and history turned off*" will be used, following the recommendations in the [[http://www.cesm.ucar.edu/models/cesm1.2/cesm/doc/usersguide/x1516.html][CESM User's Guide.]]
 3. For each case, *five runs* will be performed in order to assess variability.
