@@ -6,9 +6,13 @@
 Configure and analyse [[http://www.cesm.ucar.edu/][CESM]] simulations in order to compare /MARC/ (the /Modal Two-Moment Mixing-State-Resolving Aerosol Model for Radiation and Climate/) and [[http://www.geosci-model-dev.net/5/709/2012/][MAM]].
 
 ** Status
-***** DONE Design and finalize =user_nl_cam= files for *comparison* simulations
-CLOSED: [2017-07-21 Fri 11:25]
-***** TODO Design and finalize configuration (in =configure_simulations.org=) of *comparison* simulations
+
+*** Completed
+***** DONE Design and check =user_nl_cam= files for *comparison* simulations
+CLOSED: [2017-07-21 Fri 11:48]
+
+*** Still to-do
+***** TODO Design and check configuration (in =configure_simulations.org=) of *comparison* simulations
 ***** TODO Submit *comparison* simulations
 ***** TODO Design and finalize =user_nl_cam= files for *timing* simulations
 ***** TODO Design and finalize configuration (in =configure_simulations.org=) of *timing* simulations
