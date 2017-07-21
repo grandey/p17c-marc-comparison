@@ -51,10 +51,15 @@ The simulations will be configured similarly to the comparison simulations descr
 *** Completed
 ***** DONE Design and check =user_nl_cam= files for *comparison* simulations
 CLOSED: [2017-07-21 Fri 11:48]
+***** DONE Reproduce MARC emissions files using scripts in =p17c_input_data/= and check input data
+CLOSED: [2017-07-21 Fri 14:34]
+***** DONE Design and check configuration (in =configure_comparison_simulations.org=) of *comparison* simulations
+CLOSED: [2017-07-21 Fri 14:35]
+***** DONE Create and submit *comparison* simulations
+CLOSED: [2017-07-21 Fri 14:47]
 
 *** Still to-do
-***** TODO Design and check configuration (in =configure_comparison_simulations.org=) of *comparison* simulations
-***** TODO Create and submit *comparison* simulations
+***** TODO Check and store copy of output from *comparison* simulations
 ***** TODO Design and finalize =user_nl_cam= files for *timing* simulations
 ***** TODO Design and finalize configuration of *timing* simulations
 ***** TODO Create and submit *timing* simulations

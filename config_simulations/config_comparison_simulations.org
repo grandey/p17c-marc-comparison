@@ -33,11 +33,13 @@ To facilitate ease of access to the run directory, I like to create a symbolic l
 *** Submission to the =economy= queue
 By default, my =.run= files are configured for submission to the =regular= queue. In order to submit to the =economy= queue, the =.run= file can be modified using =sed -i 's/regular/economy/g' $CASENAME.run=.
 
-** Creation, configuration, and submission of simulations
+** Creation, configuration, and submission of comparison simulations
 
 The source code blocks below are tangled using =C-c C-v t= in order to create bash scripts named =create_<CASENAME>.sh=.
+All five comparison simulations have been created, configured, built, and submitted using these bash scripts on 2017-07-21.
 
-*** TODO =p17c_marc_2000=
+*** DONE =p17c_marc_2000=
+CLOSED: [2017-07-21 Fri 14:38]
 
 #+BEGIN_SRC :tangle yes :tangle create_p17c_marc_2000.sh :shebang #!/bin/bash
 CASENAME=p17c_marc_2000
@@ -56,7 +58,7 @@ ln -s /glade/scratch/bgrandey/$CASENAME/run/ scratch_run
 ./xmlchange STOP_OPTION=nyears
 ./xmlchange STOP_N=8
 ./xmlchange RESUBMIT=3
-./sed -i 's/regular/economy/g' $CASENAME.run
+sed -i 's/regular/economy/g' $CASENAME.run
 ./$CASENAME.submit
 #+END_SRC
 
@@ -64,8 +66,10 @@ Notes:
 - Model directory is =~/models/cesm1221_marc/=.
 - =compset= is =FC5MARC=.
 - =CAM_CONFIG_OPTS= are =-phys cam5 -chem trop_marc -cosp=.
+- Case created, configured, built, and submitted on 2017-07-21.
 
-*** TODO =p17c_marc_1850=
+*** DONE =p17c_marc_1850=
+CLOSED: [2017-07-21 Fri 14:39]
 
 #+BEGIN_SRC :tangle yes :tangle create_p17c_marc_1850.sh :shebang #!/bin/bash
 CASENAME=p17c_marc_1850
@@ -84,14 +88,16 @@ ln -s /glade/scratch/bgrandey/$CASENAME/run/ scratch_run
 ./xmlchange STOP_OPTION=nyears
 ./xmlchange STOP_N=8
 ./xmlchange RESUBMIT=3
-./sed -i 's/regular/economy/g' $CASENAME.run
+sed -i 's/regular/economy/g' $CASENAME.run
 ./$CASENAME.submit
 #+END_SRC
 
 Notes:
 - Same as =p17c_marc_2000= above, but with different =$CASENAME= (and =user_nl_cam= file).
+- Case created, configured, built, and submitted on 2017-07-21.
 
-*** TODO =p17c_mam3_2000=
+*** DONE =p17c_mam3_2000=
+CLOSED: [2017-07-21 Fri 14:40]
 
 #+BEGIN_SRC :tangle yes :tangle create_p17c_mam3_2000.sh :shebang #!/bin/bash
 CASENAME=p17c_mam3_2000
@@ -110,7 +116,7 @@ ln -s /glade/scratch/bgrandey/$CASENAME/run/ scratch_run
 ./xmlchange STOP_OPTION=nyears
 ./xmlchange STOP_N=8
 ./xmlchange RESUBMIT=3
-./sed -i 's/regular/economy/g' $CASENAME.run
+sed -i 's/regular/economy/g' $CASENAME.run
 ./$CASENAME.submit
 #+END_SRC
 
@@ -118,8 +124,10 @@ Notes:
 - Model directory is =~/models/cesm1_2_2_1/=.
 - =compset= is =FC5=.
 - =CAM_CONFIG_OPTS= are =-phys cam5 -cosp=.
+- Case created, configured, built, and submitted on 2017-07-21.
 
-*** TODO =p17c_mam3_1850=
+*** DONE =p17c_mam3_1850=
+CLOSED: [2017-07-21 Fri 14:41]
 
 #+BEGIN_SRC :tangle yes :tangle create_p17c_mam3_1850.sh :shebang #!/bin/bash
 CASENAME=p17c_mam3_1850
@@ -138,14 +146,16 @@ ln -s /glade/scratch/bgrandey/$CASENAME/run/ scratch_run
 ./xmlchange STOP_OPTION=nyears
 ./xmlchange STOP_N=8
 ./xmlchange RESUBMIT=3
-./sed -i 's/regular/economy/g' $CASENAME.run
+sed -i 's/regular/economy/g' $CASENAME.run
 ./$CASENAME.submit
 #+END_SRC
 
 Notes:
 - Same as =p17c_mam3_2000= above, but with different =$CASENAME= (and =user_nl_cam= file).
+- Case created, configured, built, and submitted on 2017-07-21.
 
-*** TODO =p17c_mam7_2000=
+*** DONE =p17c_mam7_2000=
+CLOSED: [2017-07-21 Fri 14:42]
 
 #+BEGIN_SRC :tangle yes :tangle create_p17c_mam7_2000.sh :shebang #!/bin/bash
 CASENAME=p17c_mam7_2000
@@ -164,7 +174,7 @@ ln -s /glade/scratch/bgrandey/$CASENAME/run/ scratch_run
 ./xmlchange STOP_OPTION=nyears
 ./xmlchange STOP_N=8
 ./xmlchange RESUBMIT=3
-./sed -i 's/regular/economy/g' $CASENAME.run
+sed -i 's/regular/economy/g' $CASENAME.run
 ./$CASENAME.submit
 #+END_SRC
 
@@ -172,4 +182,5 @@ Notes:
 - Model directory is =~/models/cesm1_2_2_1/=.
 - =compset= is =FC5=.
 - =CAM_CONFIG_OPTS= are =-phys cam5 -chem trop_mam7 -cosp=.
+- Case created, configured, built, and submitted on 2017-07-21.
 

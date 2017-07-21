@@ -16,5 +16,5 @@ ln -s /glade/scratch/bgrandey/$CASENAME/run/ scratch_run
 ./xmlchange STOP_OPTION=nyears
 ./xmlchange STOP_N=8
 ./xmlchange RESUBMIT=3
-./sed -i 's/regular/economy/g' $CASENAME.run
+sed -i 's/regular/economy/g' $CASENAME.run
 ./$CASENAME.submit
