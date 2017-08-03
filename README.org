@@ -69,3 +69,4 @@ Benjamin S. Grandey, 2017, in collaboration with [[http://www.danielrothenberg.c
 
 ** Acknowledgements
 This repository has been developed in order to facilitate research conducted at the Singapore-MIT Alliance for Research and Technology (SMART), supported by the National Research Foundation (NRF), Prime Minister’s Office, Singapore under its Campus for Research Excellence and Technological Enterprise (CREATE) programme.
+Thanks are due to Zheng Lu and Xiaohong Liu for advice about model configuration, especially MAM7.
