@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Purpose:
-#   Sync copy of each p17c case directory to ~/scratch/archive/
+#   rsync copy of each p17c simulation directory in ~/scratch/archive/ to newton
 #
 # Usage:
 #   To be run on Cheyenne:
-#     ./archive_case_dir_p17c.sh
+#     ./rsync_archive_to_newton.sh
 #
 # Author:
 #   Benjamin S. Grandey, 2017
@@ -16,7 +16,7 @@ ARCHIVE_DIR=/glade/scratch/bgrandey/archive
 for CASENAME in p17c_marc_1850 p17c_marc_2000 p17c_mam3_1850 p17c_mam3_2000 p17c_mam7_2000
 do
     echo $CASENAME
-    rsync -av /glade/u/home/bgrandey/cesm1_2_2_1_cases/$CASENAME $ARCHIVE_DIR/$CASENAME/arch_case/ 
+    rsync -avz --progress -e "ssh -p $NEWTON_PORT" $ARCHIVE_DIR/$CASENAME $NEWTON_USER@$NEWTON_IP:/orchard/grandey/data2/acrc/RUN/archive/
 done
 
 echo "Finished"
