@@ -57,9 +57,10 @@ CLOSED: [2017-07-21 Fri 14:34]
 CLOSED: [2017-07-21 Fri 14:35]
 ***** DONE Create and submit *comparison* simulations
 CLOSED: [2017-07-21 Fri 14:47]
+***** DONE Store copy of output from *comparison* simulations on Newton
+CLOSED: [2017-08-16 Wed 15:22]
 
 *** Still to-do
-***** TODO Check and store copy of output from *comparison* simulations
 ***** TODO Design and finalize =user_nl_cam= files for *timing* simulations
 ***** TODO Design and finalize configuration of *timing* simulations
 ***** TODO Create and submit *timing* simulations
