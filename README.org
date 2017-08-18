@@ -58,7 +58,7 @@ After gunzipping a copy of the atmospheric h0 files on Newton, [[https://github.
 source activate pyreshaper
 #+END_SRC
 
-First, =s2make= is used to generate a specifier file[fn:1]:
+First, =s2make= is used to generate a specifier file [fn:1]:
 
 #+BEGIN_SRC
 CASENAME=p17c_marc_2000
@@ -85,6 +85,37 @@ Second, =s2run= is run in parallel in order to convert the data to time-series f
 
 #+BEGIN_SRC
 mpirun -n 8 s2srun --verbosity=2 $OUT_DIR/specfile_$CASENAME.s2s
+#+END_SRC
+
+*** Syncing to local machine for analysis
+Data of interest can then be pulled from Newton using rsync. Note: some variable names differ between MARC and MAM3, and MAM7.
+
+MARC radiation data:
+
+#+BEGIN_SRC
+CASENAME_LIST="p17c_marc_2000 p17c_marc_1850"
+VARIABLE_LIST="FSNTOA FSNTOANOA FSNTOACNOA SAF DRF CRF LWCF"
+#+END_SRC
+
+MAM3 radiation data:
+
+#+BEGIN_SRC
+CASENAME_LIST="p17c_mam3_2000 p17c_mam3_1850"
+VARIABLE_LIST="FSNTOA FSNTOA_d1 FSNTOAC_d1 SWCF_d1 LWCF LWCF_d1"
+#+END_SRC
+
+Rsync command:
+
+#+BEGIN_SRC
+for CASENAME in $CASENAME_LIST
+do
+  for VARIABLE in $VARIABLE_LIST
+  do
+    rsync -av --progress -e "ssh -p $NEWTON_PORT" \
+        $NEWTON_USER@$NEWTON_IP:/dhobyghaut/grandey/data5/cesm/s2s/$CASENAME/atm/$CASENAME.cam.h0.$VARIABLE.nc \
+        $HOME/data/projects/p17c_marc_comparison/output_timeseries/
+  done
+done
 #+END_SRC
 
 ** Status
