@@ -46,6 +46,47 @@ The simulations will be configured similarly to the comparison simulations descr
 3. For each case, *five runs* will be performed in order to assess variability.
 4. For consistency, all cases will be submitted *on the same day*.
 
+** Data management
+
+*** Saving a copy of the output data to Newton
+Please see [[https://github.com/grandey/p17c-marc-comparison/blob/master/manage_data/archive_case_dir_p17c.sh][archive_case_dir_p17c.sh]], [[https://github.com/grandey/p17c-marc-comparison/blob/master/manage_data/gzip_netcdf_p17c.sh][gzip_netcdf_p17c.sh]], and [[https://github.com/grandey/p17c-marc-comparison/blob/master/manage_data/rsync_archive_to_newton.sh][rsync_archive_to_newton.sh]], which outline the workflow for the data from the comparison simulations.
+
+*** Converting from time-slice to time-series format
+After gunzipping a copy of the atmospheric h0 files on Newton, [[https://github.com/NCAR/PyReshaper][PyReshaper]] (v1.0.1) can be used to convert to time-series format. I have =PyReshaper= installed in a separate =conda= environment:
+
+#+BEGIN_SRC
+source activate pyreshaper
+#+END_SRC
+
+First, =s2make= is used to generate a specifier file[fn:1]:
+
+#+BEGIN_SRC
+CASENAME=p17c_marc_2000
+
+IN_DIR=/somerset/grandey/data4/acrc/RUN/unzipped/$CASENAME/atm/hist
+OUT_DIR=/dhobyghaut/grandey/data5/cesm/s2s/$CASENAME/atm
+
+mkdir -p $OUT_DIR
+
+s2smake \
+    --netcdf_format="netcdf4" \
+    --compression_level=1 \
+    --output_prefix="$OUT_DIR/$CASENAME.cam.h0." \
+    --output_suffix=".nc" \
+    -m "time" -m "time_bnds" -m "ch4vmr" -m "co2vmr" -m "f11vmr" \
+    -m "time_written" -m "n2ovmr" -m "date_written" -m "f12vmr" \
+    -m "sol_tsi" -m "nsteph" -m "datesec" -m "ndcur" -m "date" \
+    -m "nscur" \
+    --specfile=$OUT_DIR/specfile_$CASENAME.s2s \
+    $IN_DIR/$CASENAME.cam.h0.????-??.nc
+#+END_SRC
+
+Second, =s2run= is run in parallel in order to convert the data to time-series format:
+
+#+BEGIN_SRC
+mpirun -n 8 s2srun --verbosity=2 $OUT_DIR/specfile_$CASENAME.s2s
+#+END_SRC
+
 ** Status
 
 *** Completed
@@ -61,6 +102,7 @@ CLOSED: [2017-07-21 Fri 14:47]
 CLOSED: [2017-08-16 Wed 15:22]
 
 *** Still to-do
+***** TODO Finish converting data from comparison simulations to time-series format
 ***** TODO Design and finalize =user_nl_cam= files for *timing* simulations
 ***** TODO Design and finalize configuration of *timing* simulations
 ***** TODO Create and submit *timing* simulations
@@ -71,3 +113,8 @@ Benjamin S. Grandey, 2017, in collaboration with [[http://www.danielrothenberg.c
 ** Acknowledgements
 This repository has been developed in order to facilitate research conducted at the Singapore-MIT Alliance for Research and Technology (SMART), supported by the National Research Foundation (NRF), Prime Minister’s Office, Singapore under its Campus for Research Excellence and Technological Enterprise (CREATE) programme.
 Thanks are due to Zheng Lu and Xiaohong Liu for advice about model configuration, especially MAM7.
+
+** Footnotes
+
+[fn:1] The metadata field information (indicated by =m=) has been copied from some example code Daniel Rothenberg kindly provided.
+
