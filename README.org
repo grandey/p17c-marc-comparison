@@ -58,7 +58,7 @@ After gunzipping a copy of the atmospheric h0 files on Newton, [[https://github.
 source activate pyreshaper
 #+END_SRC
 
-First, =s2make= is used to generate a specifier file [fn:1]:
+First, =s2make= is used to generate a specifier file, e.g.:
 
 #+BEGIN_SRC
 CASENAME=p17c_marc_2000
@@ -80,6 +80,8 @@ s2smake \
     --specfile=$OUT_DIR/specfile_$CASENAME.s2s \
     $IN_DIR/$CASENAME.cam.h0.????-??.nc
 #+END_SRC
+
+(The metadata field information (indicated by =m=) has been copied from some example code Daniel Rothenberg kindly provided.)
 
 Second, =s2run= is run in parallel in order to convert the data to time-series format:
 
@@ -121,22 +123,25 @@ done
 ** Status
 
 *** Completed
-***** DONE Design and check =user_nl_cam= files for *comparison* simulations
+***** DONE Design and check =user_nl_cam= files for comparison simulations
 CLOSED: [2017-07-21 Fri 11:48]
 ***** DONE Reproduce MARC emissions files using scripts in =p17c_input_data/= and check input data
 CLOSED: [2017-07-21 Fri 14:34]
-***** DONE Design and check configuration (in =configure_comparison_simulations.org=) of *comparison* simulations
+***** DONE Design and check configuration (in =configure_comparison_simulations.org=) of comparison simulations
 CLOSED: [2017-07-21 Fri 14:35]
-***** DONE Create and submit *comparison* simulations
+***** DONE Create and submit comparison simulations
 CLOSED: [2017-07-21 Fri 14:47]
-***** DONE Store copy of output from *comparison* simulations on Newton
+***** DONE Store copy of output from comparison simulations on Newton
 CLOSED: [2017-08-16 Wed 15:22]
+***** DONE Convert atm h0 data from comparison simulations to time-series format on Newton
+CLOSED: [2017-08-21 Mon 14:39]
 
 *** Still to-do
-***** TODO Finish converting data from comparison simulations to time-series format
-***** TODO Design and finalize =user_nl_cam= files for *timing* simulations
-***** TODO Design and finalize configuration of *timing* simulations
-***** TODO Create and submit *timing* simulations
+***** TODO Preliminary analysis of RFPs etc for comparison simulations
+***** TODO AMWG diagnostics for comparison simulations - Daniel working on this
+***** TODO Design and finalize =user_nl_cam= files for timing simulations
+***** TODO Design and finalize configuration of timing simulations
+***** TODO Create and submit timing simulations
 
 ** Author
 Benjamin S. Grandey, 2017, in collaboration with [[http://www.danielrothenberg.com/][Daniel Rothenberg]], [[https://eapsweb.mit.edu/people/jqj][Qinjian Jin]], and [[http://web.mit.edu/wangc/][Chien Wang]].
@@ -144,8 +149,4 @@ Benjamin S. Grandey, 2017, in collaboration with [[http://www.danielrothenberg.c
 ** Acknowledgements
 This repository has been developed in order to facilitate research conducted at the Singapore-MIT Alliance for Research and Technology (SMART), supported by the National Research Foundation (NRF), Prime Minister’s Office, Singapore under its Campus for Research Excellence and Technological Enterprise (CREATE) programme.
 Thanks are due to Zheng Lu and Xiaohong Liu for advice about model configuration, especially MAM7.
-
-** Footnotes
-
-[fn:1] The metadata field information (indicated by =m=) has been copied from some example code Daniel Rothenberg kindly provided.
 
