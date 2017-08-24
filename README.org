@@ -92,18 +92,18 @@ mpirun -n 8 s2srun --verbosity=2 $OUT_DIR/specfile_$CASENAME.s2s
 *** Syncing to local machine for analysis
 Data of interest can then be pulled from Newton using rsync. Note: some variable names differ between MARC and MAM3, and MAM7.
 
-MARC radiation data:
+Some MARC fields of interest:
 
 #+BEGIN_SRC
 CASENAME_LIST="p17c_marc_2000 p17c_marc_1850"
-VARIABLE_LIST="FSNTOA FSNTOANOA FSNTOACNOA SAF DRF CRF LWCF"
+VARIABLE_LIST="FSNTOA FSNTOANOA FSNTOACNOA SAF DRF CRF LWCF SUL_LDG OC_LDG BC_LDG"
 #+END_SRC
 
-MAM3 radiation data:
+Some MAM3 fields of interest:
 
 #+BEGIN_SRC
 CASENAME_LIST="p17c_mam3_2000 p17c_mam3_1850"
-VARIABLE_LIST="FSNTOA FSNTOA_d1 FSNTOAC_d1 SWCF_d1 LWCF LWCF_d1"
+VARIABLE_LIST="FSNTOA FSNTOA_d1 FSNTOAC_d1 SWCF_d1 LWCF LWCF_d1 BURDENSO4 BURDENPOM BURDENBC"
 #+END_SRC
 
 Rsync command:
@@ -135,10 +135,13 @@ CLOSED: [2017-07-21 Fri 14:47]
 CLOSED: [2017-08-16 Wed 15:22]
 ***** DONE Convert atm h0 data from comparison simulations to time-series format on Newton
 CLOSED: [2017-08-21 Mon 14:39]
+***** DONE AMWG diagnostics for comparison simulations - Daniel done this
+CLOSED: [2017-08-23 Wed 16:30]
+***** DONE Preliminary analysis of RFPs for comparison simulations
+CLOSED: [2017-08-24 Thu 12:39]
 
 *** Still to-do
-***** TODO Preliminary analysis of RFPs etc for comparison simulations
-***** TODO AMWG diagnostics for comparison simulations - Daniel working on this
+***** TODO Continue preliminary analysis of comparison simulations
 ***** TODO Design and finalize =user_nl_cam= files for timing simulations
 ***** TODO Design and finalize configuration of timing simulations
 ***** TODO Create and submit timing simulations
