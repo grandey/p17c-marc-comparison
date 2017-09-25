@@ -92,18 +92,33 @@ mpirun -n 8 s2srun --verbosity=2 $OUT_DIR/specfile_$CASENAME.s2s
 *** Syncing to local machine for analysis
 Data of interest can then be pulled from Newton using rsync. Note: some variable names differ between MARC and MAM3, and MAM7.
 
-Some MARC fields of interest:
+MARC fields of interest:
 
 #+BEGIN_SRC
 CASENAME_LIST="p17c_marc_2000 p17c_marc_1850"
-VARIABLE_LIST="FSNTOA FSNTOANOA FSNTOACNOA SAF DRF CRF LWCF SUL_LDG OC_LDG BC_LDG"
+VARIABLE_LIST=" \
+FSNTOA FSNTOANOA FSNTOACNOA SAF DRF CRF LWCF \
+pSUL_LDG OC_LDG BC_LDG MOS_LDG MBS_LDG \
+CCN3 TGCLDLWP TGCLDIWP"
 #+END_SRC
 
-Some MAM3 fields of interest:
+MAM3 fields of interest:
 
 #+BEGIN_SRC
 CASENAME_LIST="p17c_mam3_2000 p17c_mam3_1850"
-VARIABLE_LIST="FSNTOA FSNTOA_d1 FSNTOAC_d1 SWCF_d1 LWCF LWCF_d1 BURDENSO4 BURDENPOM BURDENBC"
+VARIABLE_LIST=" \
+FSNTOA FSNTOA_d1 FSNTOAC_d1 SWCF_d1 LWCF LWCF_d1 \
+BURDENSO4 BURDENPOM BURDENBC \
+CCN3 TGCLDLWP TGCLDIWP"
+#+END_SRC
+
+MAM7 fields of interest:
+
+#+BEGIN_SRC
+CASENAME_LIST="p17c_mam7_2000"
+VARIABLE_LIST=" \
+BURDENSO4 BURDENPOM BURDENBC \
+CCN3 TGCLDLWP TGCLDIWP"
 #+END_SRC
 
 Rsync command:
