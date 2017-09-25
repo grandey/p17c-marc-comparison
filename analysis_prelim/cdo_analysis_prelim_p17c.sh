@@ -49,7 +49,7 @@ echo "Calculating DERIVED fields"
 for IN_FILE1 in $OUT_DIR/s1.ym.p17c_marc_????.*.FSNTOA.nc $OUT_DIR/s1.*.p17c_mam3_????.*.FSNTOA.nc
 do
     echo "cFNTOA"
-    IN_FILE2=${IN_FILE1/FSNTOA/LWCF}
+    IN_FILE2=${IN_FILE1/FSNTOA/LWCF}  # Using LWCF, since clean-sky LWCF not available for MARC
     OUT_FILE=${IN_FILE1/FSNTOA/cFNTOA}
     TEMP_FILE="$OUT_DIR/temp.nc"
     cdo merge $IN_FILE1 $IN_FILE2 $TEMP_FILE >/dev/null 2>/dev/null
