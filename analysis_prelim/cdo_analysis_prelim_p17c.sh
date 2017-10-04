@@ -21,11 +21,11 @@ rm -f $OUT_DIR/*.nc
 # 1. ANNUAL means for years 3-32 for all fields of interest
 echo "Getting ANNUAL means for years 3-32 for all fields of interest"
 FIELD_LIST=" \
-FSNTOA FSNTOANOA FSNTOACNOA SAF DRF CRF LWCF \
-FSNTOA_d1 FSNTOAC_d1 SWCF_d1
+FSNTOA FSNTOANOA FSNTOACNOA FSNS FSNSNOA SAF DRF CRF LWCF \
+FSNTOA_d1 FSNTOAC_d1 FSNS_d1 SWCF_d1
 pSUL_LDG OC_LDG BC_LDG MOS_LDG MBS_LDG \
 BURDENSO4 BURDENPOM BURDENBC \
-CCN3 TGCLDLWP TGCLDIWP \
+CCN3 TGCLDLWP TGCLDIWP CLDTOT CDNUMC \
 "
 for FIELD in $FIELD_LIST
 do
@@ -45,10 +45,10 @@ done
 
 # 1b. Calculate DERIVED fields
 echo "Calculating DERIVED fields"
-# Net RFP (marc, mam3) - when 2000-1850 difference is calculated
+# Net (SW + LW) RFP (marc, mam3) - when 2000-1850 difference is calculated
+echo "cFNTOA"
 for IN_FILE1 in $OUT_DIR/s1.ym.p17c_marc_????.*.FSNTOA.nc $OUT_DIR/s1.*.p17c_mam3_????.*.FSNTOA.nc
 do
-    echo "cFNTOA"
     IN_FILE2=${IN_FILE1/FSNTOA/LWCF}  # Using LWCF, since clean-sky LWCF not available for MARC
     OUT_FILE=${IN_FILE1/FSNTOA/cFNTOA}
     TEMP_FILE="$OUT_DIR/temp.nc"
@@ -57,15 +57,91 @@ do
     rm -f $TEMP_FILE
     echo ${OUT_FILE##*/}
 done
-# Direct effect (mam3)
+# Direct effect at TOA (mam3)
+echo "cDRE mam3"
 for IN_FILE1 in $OUT_DIR/s1.ym.p17c_mam3_????.*.FSNTOA.nc
 do
-    echo "cDRE"
     IN_FILE2=${IN_FILE1/FSNTOA/FSNTOA_d1}
     OUT_FILE=${IN_FILE1/FSNTOA/cDRE}
     TEMP_FILE="$OUT_DIR/temp.nc"
     cdo merge $IN_FILE1 $IN_FILE2 $TEMP_FILE >/dev/null 2>/dev/null
     cdo expr,'cDRE=FSNTOA-FSNTOA_d1' $TEMP_FILE $OUT_FILE >/dev/null 2>/dev/null
+    rm -f $TEMP_FILE
+    echo ${OUT_FILE##*/}
+done
+# Direct effect at TOA (marc) - should be same as DRF history field
+echo "cDRE marc"
+for IN_FILE1 in $OUT_DIR/s1.ym.p17c_marc_????.*.FSNTOA.nc
+do
+    IN_FILE2=${IN_FILE1/FSNTOA/FSNTOANOA}
+    OUT_FILE=${IN_FILE1/FSNTOA/cDRE}
+    TEMP_FILE="$OUT_DIR/temp.nc"
+    cdo merge $IN_FILE1 $IN_FILE2 $TEMP_FILE >/dev/null 2>/dev/null
+    cdo expr,'cDRE=FSNTOA-FSNTOANOA' $TEMP_FILE $OUT_FILE >/dev/null 2>/dev/null
+    rm -f $TEMP_FILE
+    echo ${OUT_FILE##*/}
+done
+# Direct effect at surface (mam3)
+echo "cDREsurf mam3"
+for IN_FILE1 in $OUT_DIR/s1.ym.p17c_mam3_????.*.FSNS.nc
+do
+    IN_FILE2=${IN_FILE1/FSNS/FSNS_d1}
+    OUT_FILE=${IN_FILE1/FSNS/cDREsurf}
+    TEMP_FILE="$OUT_DIR/temp.nc"
+    cdo merge $IN_FILE1 $IN_FILE2 $TEMP_FILE >/dev/null 2>/dev/null
+    cdo expr,'cDREsurf=FSNS-FSNS_d1' $TEMP_FILE $OUT_FILE >/dev/null 2>/dev/null
+    rm -f $TEMP_FILE
+    echo ${OUT_FILE##*/}
+done
+# Direct effect at surface (marc)
+echo "cDREsurf marc"
+for IN_FILE1 in $OUT_DIR/s1.ym.p17c_marc_????.*.FSNS.nc
+do
+    IN_FILE2=${IN_FILE1/FSNS/FSNSNOA}
+    OUT_FILE=${IN_FILE1/FSNS/cDREsurf}
+    TEMP_FILE="$OUT_DIR/temp.nc"
+    cdo merge $IN_FILE1 $IN_FILE2 $TEMP_FILE >/dev/null 2>/dev/null
+    cdo expr,'cDREsurf=FSNS-FSNSNOA' $TEMP_FILE $OUT_FILE >/dev/null 2>/dev/null
+    rm -f $TEMP_FILE
+    echo ${OUT_FILE##*/}
+done
+# Direct effect atmospheric absorption (mam3)
+echo "cDREatm mam3"
+for IN_FILE1 in $OUT_DIR/s1.*.p17c_mam3_????.*.FSNTOA.nc
+do
+    IN_FILE2=${IN_FILE1/FSNTOA/FSNS}
+    IN_FILE3=${IN_FILE1/FSNTOA/FSNTOA_d1}
+    IN_FILE4=${IN_FILE1/FSNTOA/FSNS_d1}
+    OUT_FILE=${IN_FILE1/FSNTOA/cDREatm}
+    TEMP_FILE="$OUT_DIR/temp.nc"
+    cdo merge $IN_FILE1 $IN_FILE2 $IN_FILE3 $IN_FILE4 $TEMP_FILE >/dev/null 2>/dev/null
+    cdo expr,'cDREatm=FSNTOA-FSNTOA_d1-FSNS+FSNS_d1' $TEMP_FILE $OUT_FILE >/dev/null 2>/dev/null
+    rm -f $TEMP_FILE
+    echo ${OUT_FILE##*/}
+done
+# Direct effect atmospheric absorption (marc)
+echo "cDREatm marc"
+for IN_FILE1 in $OUT_DIR/s1.*.p17c_marc_????.*.FSNTOA.nc
+do
+    IN_FILE2=${IN_FILE1/FSNTOA/FSNS}
+    IN_FILE3=${IN_FILE1/FSNTOA/FSNTOANOA}
+    IN_FILE4=${IN_FILE1/FSNTOA/FSNSNOA}
+    OUT_FILE=${IN_FILE1/FSNTOA/cDREatm}
+    TEMP_FILE="$OUT_DIR/temp.nc"
+    cdo merge $IN_FILE1 $IN_FILE2 $IN_FILE3 $IN_FILE4 $TEMP_FILE >/dev/null 2>/dev/null
+    cdo expr,'cDREatm=FSNTOA-FSNTOANOA-FSNS+FSNSNOA' $TEMP_FILE $OUT_FILE >/dev/null 2>/dev/null
+    rm -f $TEMP_FILE
+    echo ${OUT_FILE##*/}
+done
+# Net SW atmospheric absorption RFP (marc, mam3)
+echo "cFSNatm"
+for IN_FILE1 in $OUT_DIR/s1.ym.p17c_marc_????.*.FSNTOA.nc $OUT_DIR/s1.*.p17c_mam3_????.*.FSNTOA.nc
+do
+    IN_FILE2=${IN_FILE1/FSNTOA/FSNS}
+    OUT_FILE=${IN_FILE1/FSNTOA/cFSNatm}
+    TEMP_FILE="$OUT_DIR/temp.nc"
+    cdo merge $IN_FILE1 $IN_FILE2 $TEMP_FILE >/dev/null 2>/dev/null
+    cdo expr,'cFSNatm=FSNTOA-FSNS' $TEMP_FILE $OUT_FILE >/dev/null 2>/dev/null
     rm -f $TEMP_FILE
     echo ${OUT_FILE##*/}
 done
