@@ -46,9 +46,9 @@ done
 
 # 1b. Calculate DERIVED fields
 echo "Calculating DERIVED fields"
-# Net (SW + LW) RFP (marc, mam3) - when 2000-1850 difference is calculated
+# Net (SW + LW) RFP (marc, mam) - when 2000-1850 difference is calculated
 echo "cFNTOA"
-for IN_FILE1 in $OUT_DIR/s1.ym.p17c_marc_????.*.FSNTOA.nc $OUT_DIR/s1.*.p17c_mam3_????.*.FSNTOA.nc
+for IN_FILE1 in $OUT_DIR/s1.ym.p17c_marc_????.*.FSNTOA.nc $OUT_DIR/s1.*.p17c_mam?_????.*.FSNTOA.nc
 do
     IN_FILE2=${IN_FILE1/FSNTOA/LWCF}  # Using LWCF, since clean-sky LWCF not available for MARC
     OUT_FILE=${IN_FILE1/FSNTOA/cFNTOA}
@@ -58,9 +58,9 @@ do
     rm -f $TEMP_FILE
     echo ${OUT_FILE##*/}
 done
-# Direct effect at TOA (mam3)
-echo "cDRE mam3"
-for IN_FILE1 in $OUT_DIR/s1.ym.p17c_mam3_????.*.FSNTOA.nc
+# Direct effect at TOA (mam)
+echo "cDRE mam3 mam7"
+for IN_FILE1 in $OUT_DIR/s1.ym.p17c_mam?_????.*.FSNTOA.nc
 do
     IN_FILE2=${IN_FILE1/FSNTOA/FSNTOA_d1}
     OUT_FILE=${IN_FILE1/FSNTOA/cDRE}
@@ -82,9 +82,9 @@ do
     rm -f $TEMP_FILE
     echo ${OUT_FILE##*/}
 done
-# Direct effect at surface (mam3)
-echo "cDREsurf mam3"
-for IN_FILE1 in $OUT_DIR/s1.ym.p17c_mam3_????.*.FSNS.nc
+# Direct effect at surface (mam)
+echo "cDREsurf mam3 mam7"
+for IN_FILE1 in $OUT_DIR/s1.ym.p17c_mam?_????.*.FSNS.nc
 do
     IN_FILE2=${IN_FILE1/FSNS/FSNS_d1}
     OUT_FILE=${IN_FILE1/FSNS/cDREsurf}
@@ -106,9 +106,9 @@ do
     rm -f $TEMP_FILE
     echo ${OUT_FILE##*/}
 done
-# Direct effect atmospheric absorption (mam3)
-echo "cDREatm mam3"
-for IN_FILE1 in $OUT_DIR/s1.*.p17c_mam3_????.*.FSNTOA.nc
+# Direct effect atmospheric absorption (mam)
+echo "cDREatm mam3 mam7"
+for IN_FILE1 in $OUT_DIR/s1.*.p17c_mam?_????.*.FSNTOA.nc
 do
     IN_FILE2=${IN_FILE1/FSNTOA/FSNS}
     IN_FILE3=${IN_FILE1/FSNTOA/FSNTOA_d1}
@@ -134,9 +134,9 @@ do
     rm -f $TEMP_FILE
     echo ${OUT_FILE##*/}
 done
-# Net SW atmospheric absorption RFP (marc, mam3)
+# Net SW atmospheric absorption RFP (marc, mam)
 echo "cFSNatm"
-for IN_FILE1 in $OUT_DIR/s1.ym.p17c_marc_????.*.FSNTOA.nc $OUT_DIR/s1.*.p17c_mam3_????.*.FSNTOA.nc
+for IN_FILE1 in $OUT_DIR/s1.ym.p17c_marc_????.*.FSNTOA.nc $OUT_DIR/s1.*.p17c_mam?_????.*.FSNTOA.nc
 do
     IN_FILE2=${IN_FILE1/FSNTOA/FSNS}
     OUT_FILE=${IN_FILE1/FSNTOA/cFSNatm}
