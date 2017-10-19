@@ -146,13 +146,32 @@ do
     rm -f $TEMP_FILE
     echo ${OUT_FILE##*/}
 done
+# CCN in bottom model layer (marc, mam)
+echo "cCCNml30"
+for IN_FILE in $OUT_DIR/s1.ym.p17c_marc_????.*.CCN3.nc $OUT_DIR/s1.*.p17c_mam?_????.*.CCN3.nc
+do
+    OUT_FILE=${IN_FILE/CCN3/cCCNml30}
+    TEMP_FILE="$OUT_DIR/temp.nc"
+    cdo sellevidx,30 $IN_FILE $TEMP_FILE >/dev/null 2>/dev/null
+    cdo expr,'cCCNml30=CCN3' $TEMP_FILE $OUT_FILE >/dev/null 2>/dev/null
+    echo ${OUT_FILE##*/}
+done
+# CCN at level 19, approx 525hPa (marc, mam)
+echo "cCCNml19"
+for IN_FILE in $OUT_DIR/s1.ym.p17c_marc_????.*.CCN3.nc $OUT_DIR/s1.*.p17c_mam?_????.*.CCN3.nc
+do
+    OUT_FILE=${IN_FILE/CCN3/cCCNml19}
+    cdo sellevidx,19 $IN_FILE $TEMP_FILE >/dev/null 2>/dev/null
+    cdo expr,'cCCNml19=CCN3' $TEMP_FILE $OUT_FILE >/dev/null 2>/dev/null
+    echo ${OUT_FILE##*/}
+done
 
 # 2. Average across LONGITUDES (ie zonal mean)
 echo "Averaging across LONGITUDES"
 for IN_FILE in $OUT_DIR/s1.ym.*.nc
 do
     OUT_FILE=${IN_FILE/s1/s2.zm}  # bash string replacement
-    cdo zonmean $IN_FILE $OUT_FILE # >/dev/null 2>/dev/null
+    cdo zonmean $IN_FILE $OUT_FILE >/dev/null 2>/dev/null
     echo ${OUT_FILE##*/}
 done
 
