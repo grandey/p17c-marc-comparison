@@ -1,0 +1,36 @@
+#+TITLE: p17c-marc-comparison/status.org
+#+AUTHOR: Benjamin S. Grandey
+#+OPTIONS: ^:nil
+
+** Status
+
+*** Completed
+***** DONE Design and check =user_nl_cam= files for comparison simulations
+CLOSED: [2017-07-21 Fri 11:48]
+***** DONE Reproduce MARC emissions files using scripts in =p17c_input_data/= and check input data
+CLOSED: [2017-07-21 Fri 14:34]
+***** DONE Design and check configuration (in =configure_comparison_simulations.org=) of comparison simulations
+CLOSED: [2017-07-21 Fri 14:35]
+***** DONE Create and submit comparison simulations
+CLOSED: [2017-07-21 Fri 14:47]
+***** DONE Store copy of output from comparison simulations on Newton
+CLOSED: [2017-08-16 Wed 15:22]
+***** DONE Convert atm h0 data from comparison simulations to time-series format on Newton
+CLOSED: [2017-08-21 Mon 14:39]
+***** DONE AMWG diagnostics for comparison simulations - Daniel done this
+CLOSED: [2017-08-23 Wed 16:30]
+***** DONE Preliminary analysis of RFPs for comparison simulations
+CLOSED: [2017-08-24 Thu 12:39]
+***** DONE Convert lnd h0 and cice h data from comparison simulations to time-series format on Newton
+CLOSED: [2017-10-24 Tue 18:54]
+***** DONE Design and finalize =user_nl_cam= files for timing simulations
+CLOSED: [2017-10-25 Wed 15:03]
+***** DONE Design and finalize configuration of timing simulations
+CLOSED: [2017-10-25 Wed 15:03]
+***** DONE Create and submit timing simulations
+CLOSED: [2017-10-25 Wed 16:14]
+
+*** Still to-do
+***** TODO Store copy of output from timing simulations on Newton
+***** TODO Continue preliminary analysis of comparison simulations
+
