@@ -1,0 +1,170 @@
+#+TITLE: p17c-marc-comparison/manage_data/data_management.org
+#+AUTHOR: Benjamin S. Grandey
+
+** Data management
+
+*** Saving a copy of the output data to Newton
+Please see [[https://github.com/grandey/p17c-marc-comparison/blob/master/manage_data/archive_case_dir_p17c.sh][archive_case_dir_p17c.sh]], [[https://github.com/grandey/p17c-marc-comparison/blob/master/manage_data/gzip_netcdf_p17c.sh][gzip_netcdf_p17c.sh]], and [[https://github.com/grandey/p17c-marc-comparison/blob/master/manage_data/rsync_archive_to_newton.sh][rsync_archive_to_newton.sh]], which outline the workflow for the data from the comparison simulations.
+
+*** Converting from time-slice to time-series format
+After gunzipping a copy of the output history files on Newton, [[https://github.com/NCAR/PyReshaper][PyReshaper]] (v1.0.1) can be used to convert to time-series format. I have =PyReshaper= installed in a separate =conda= environment:
+
+#+BEGIN_SRC
+source activate pyreshaper
+#+END_SRC
+
+**** Converting atmospheric h0 data to time-series format
+
+First, =s2make= is used to generate a specifier file, e.g. for atmosphere output:
+
+#+BEGIN_SRC
+CASENAME=p17c_marc_2000
+
+IN_DIR=/somerset/grandey/data4/acrc/RUN/unzipped/$CASENAME/atm/hist
+OUT_DIR=/dhobyghaut/grandey/data5/cesm/s2s/$CASENAME/atm
+
+mkdir -p $OUT_DIR
+
+s2smake \
+    --netcdf_format="netcdf4" \
+    --compression_level=1 \
+    --output_prefix="$OUT_DIR/$CASENAME.cam.h0." \
+    --output_suffix=".nc" \
+    -m "time" -m "time_bnds" -m "ch4vmr" -m "co2vmr" -m "f11vmr" \
+    -m "time_written" -m "n2ovmr" -m "date_written" -m "f12vmr" \
+    -m "sol_tsi" -m "nsteph" -m "datesec" -m "ndcur" -m "date" \
+    -m "nscur" \
+    --specfile=$OUT_DIR/specfile_$CASENAME.s2s \
+    $IN_DIR/$CASENAME.cam.h0.????-??.nc
+#+END_SRC
+
+(The metadata field information (indicated by =m=) has been copied from some example code Daniel Rothenberg kindly provided.)
+
+Second, =s2run= is run in parallel in order to convert the data to time-series format:
+
+#+BEGIN_SRC
+mpirun -n 8 s2srun --verbosity=2 $OUT_DIR/specfile_$CASENAME.s2s
+#+END_SRC
+
+**** Converting land h0 data to time-series format
+
+#+BEGIN_SRC
+CASENAME_LIST="p17c_mam3_2000 p17c_mam3_1850 p17c_mam7_2000 p17c_marc_2000 p17c_marc_1850"
+for CASENAME in $CASENAME_LIST
+do
+  IN_DIR=/somerset/grandey/data4/acrc/RUN/unzipped/$CASENAME/lnd/hist
+  OUT_DIR=/dhobyghaut/grandey/data5/cesm/s2s/$CASENAME/lnd
+  mkdir -p $OUT_DIR
+  s2smake \
+    --netcdf_format="netcdf4" \
+    --compression_level=1 \
+    --output_prefix="$OUT_DIR/$CASENAME.clm2.h0." \
+    --output_suffix=".nc" \
+    -m "time" -m "time_bounds" \
+    -m "mcdate" -m "mcsec" -m "mdcur" -m "mscur" -m "nstep" \
+    -m "date_written" -m "time_written" \
+    --specfile=$OUT_DIR/specfile_$CASENAME.s2s \
+    $IN_DIR/$CASENAME.clm2.h0.????-??.nc
+  mpirun -n 8 s2srun --verbosity=2 $OUT_DIR/specfile_$CASENAME.s2s
+done
+#+END_SRC
+
+**** Converting ice data to time-series format
+
+#+BEGIN_SRC
+CASENAME_LIST="p17c_mam3_2000 p17c_mam3_1850 p17c_mam7_2000 p17c_marc_2000 p17c_marc_1850"
+for CASENAME in $CASENAME_LIST
+do
+  IN_DIR=/somerset/grandey/data4/acrc/RUN/unzipped/$CASENAME/ice/hist
+  OUT_DIR=/dhobyghaut/grandey/data5/cesm/s2s/$CASENAME/ice
+  mkdir -p $OUT_DIR
+  s2smake \
+    --netcdf_format="netcdf4" \
+    --compression_level=1 \
+    --output_prefix="$OUT_DIR/$CASENAME.cice.h." \
+    --output_suffix=".nc" \
+    -m "time" -m "time_bounds" \
+    --specfile=$OUT_DIR/specfile_$CASENAME.s2s \
+    $IN_DIR/$CASENAME.cice.h.????-??.nc
+  mpirun -n 8 s2srun --verbosity=2 $OUT_DIR/specfile_$CASENAME.s2s
+done
+#+END_SRC
+
+*** Syncing to local machine for analysis
+Data of interest can then be pulled from Newton using rsync.
+
+**** Syncing atmosphere output data
+Note: some variable names differ between MARC and MAM3, and MAM7.
+
+MARC fields of interest:
+
+#+BEGIN_SRC
+CASENAME_LIST="p17c_marc_2000 p17c_marc_1850"
+VARIABLE_LIST=" \
+FSNTOA FSNTOANOA FSNTOACNOA FSNS FSNSNOA SAF DRF CRF LWCF \
+pSUL_LDG OC_LDG BC_LDG MOS_LDG MBS_LDG \
+TAU_tot \
+CCN3 TGCLDLWP TGCLDIWP TGCLDCWP CDNUMC \
+CLDTOT CLDLOW CLDMED CLDHGH"
+#+END_SRC
+
+MAM fields of interest:
+
+#+BEGIN_SRC
+CASENAME_LIST="p17c_mam3_2000 p17c_mam3_1850 p17c_mam7_2000"
+VARIABLE_LIST=" \
+FSNTOA FSNTOA_d1 FSNTOAC_d1 FSNS FSNS_d1 SWCF_d1 LWCF LWCF_d1 \
+BURDENSO4 BURDENPOM BURDENBC \
+AEROD_v \
+CCN3 TGCLDLWP TGCLDIWP TGCLDCWP CDNUMC \
+CLDTOT CLDLOW CLDMED CLDHGH"
+#+END_SRC
+
+Rsync command:
+
+#+BEGIN_SRC
+for CASENAME in $CASENAME_LIST
+do
+  for VARIABLE in $VARIABLE_LIST
+  do
+    rsync -av --progress -e "ssh -p $NEWTON_PORT" \
+        $NEWTON_USER@$NEWTON_IP:/dhobyghaut/grandey/data5/cesm/s2s/$CASENAME/atm/$CASENAME.cam.h0.$VARIABLE.nc \
+        $HOME/data/projects/p17c_marc_comparison/output_timeseries/
+  done
+done
+#+END_SRC
+
+**** Syncing land output data
+
+#+BEGIN_SRC
+CASENAME_LIST="p17c_mam3_2000 p17c_mam3_1850 p17c_mam7_2000 p17c_marc_2000 p17c_marc_1850"
+VARIABLE_LIST="FSNO SNOBCMSL"
+
+for CASENAME in $CASENAME_LIST
+do
+  for VARIABLE in $VARIABLE_LIST
+  do
+    rsync -av --progress -e "ssh -p $NEWTON_PORT" \
+        $NEWTON_USER@$NEWTON_IP:/dhobyghaut/grandey/data5/cesm/s2s/$CASENAME/lnd/$CASENAME.clm2.h0.$VARIABLE.nc \
+        $HOME/data/projects/p17c_marc_comparison/output_timeseries/
+  done
+done
+#+END_SRC
+
+**** Syncing ice output data
+
+#+BEGIN_SRC
+CASENAME_LIST="p17c_mam3_2000 p17c_mam3_1850 p17c_mam7_2000 p17c_marc_2000 p17c_marc_1850"
+VARIABLE_LIST="fs albsno albice"
+
+for CASENAME in $CASENAME_LIST
+do
+  for VARIABLE in $VARIABLE_LIST
+  do
+    rsync -av --progress -e "ssh -p $NEWTON_PORT" \
+        $NEWTON_USER@$NEWTON_IP:/dhobyghaut/grandey/data5/cesm/s2s/$CASENAME/ice/$CASENAME.cice.h.$VARIABLE.nc \
+        $HOME/data/projects/p17c_marc_comparison/output_timeseries/
+  done
+done
+#+END_SRC
+
