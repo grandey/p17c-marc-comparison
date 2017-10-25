@@ -25,6 +25,8 @@ The simulations will be configured as follows:
 7. Each simulation will be run for *32 years*, and the first two years will be excluded as spin-up. (Nudgding will not be performed.)
 8. The simulations will be performed on *Cheyenne*, using 720 processors (20 nodes).
 
+Please see [[https://github.com/grandey/p17c-marc-comparison/blob/master/config_simulations/config_comparison_simulations.org][config_comparison_simulations.org]] and [[https://github.com/grandey/p17c-marc-comparison/tree/master/user_nl_cam][user_nl_cam/]] for further details.
+
 *** Timing simulations
 In order to facilitate comparison of computational performance, several timing simulations will be performed:
 | Casename         | Aerosol model | Radiation                 | Notes                         |
@@ -41,3 +43,5 @@ The simulations will be configured similarly to the comparison simulations descr
 2. "*20-day* model runs with *restarts and history turned off*" will be used, following the recommendations in the [[http://www.cesm.ucar.edu/models/cesm1.2/cesm/doc/usersguide/x1516.html][CESM User's Guide.]]
 3. For each case, *five runs* will be performed in order to assess variability.
 4. For consistency, all cases will be submitted *on the same day*.
+
+Please see [[https://github.com/grandey/p17c-marc-comparison/blob/master/config_simulations/config_timing_simulations.org][config_timing_simulations.org]] and [[https://github.com/grandey/p17c-marc-comparison/tree/master/user_nl_cam][user_nl_cam/]] for further details.
