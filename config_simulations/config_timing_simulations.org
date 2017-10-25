@@ -15,7 +15,7 @@ For an overview of the experimental design, please see [[https://github.com/gran
 All simulations will be configured with a layout of =NTASKS=720= for all model components, spread across 20 nodes.
 
 *** Diagnostic radiation
-The clean-sky diagnostic radiation call will remain on.
+The clean-sky diagnostic radiation call will remain on in three of the simulations (=*_r2=), but will be turned off in two simulations (=*_r1=).
 
 *** =user_nl_cam= files
 The =user_nl_cam= files will be pulled from GitHub using =wget=.
@@ -32,7 +32,7 @@ By default, my =.run= files are configured for submission to the =regular= queue
 ** Creation, configuration, and submission of timing simulation cases
 
 The source code blocks below are tangled using =C-c C-v t= in order to create bash scripts named =create_<CASENAME>.sh=.
-All three simulations have been created, configured, built, and submitted using these bash scripts on 2017-10-25.
+All five simulations will be created, configured, built, and submitted using these bash scripts on 2017-10-25.
 
 *** DONE =p17c_t_marc_r2=
 CLOSED: [2017-10-25 Wed 13:45]
@@ -121,4 +121,55 @@ Notes:
 - =compset= is =FC5=.
 - =CAM_CONFIG_OPTS= are =-phys cam5 -chem trop_mam7=.
 - Case configured, built, and submitted on 2017-10-25.
+
+*** TODO =p17c_t_mam3_r1=
+
+#+BEGIN_SRC :tangle yes :tangle create_p17c_t_mam3_r1.sh :shebang #!/bin/bash
+CASENAME=p17c_t_mam3_r1
+
+cd ~/models/cesm1_2_2_1/scripts/
+./create_newcase -case ~/cesm1_2_2_1_cases/$CASENAME -res f19_g16 -compset FC5 -mach cheyenne -pes_file pes/p720n20.xml
+
+cd ~/cesm1_2_2_1_cases/$CASENAME
+./cesm_setup
+wget https://raw.githubusercontent.com/grandey/p17c-marc-comparison/master/user_nl_cam/user_nl_cam_$CASENAME
+mv user_nl_cam_$CASENAME user_nl_cam
+./$CASENAME.build
+ln -s /glade/scratch/bgrandey/$CASENAME/run/ scratch_run
+./xmlchange REST_OPTION="never"
+./xmlchange STOP_N=20
+./xmlchange RESUBMIT=4
+./xmlchange COMP_RUN_BARRIERS="TRUE"
+sed -i 's/regular/economy/g' $CASENAME.run
+./$CASENAME.submit
+#+END_SRC
+
+Notes:
+- Same as =p17c_t_mam3_r2=, but with different =user_nl_cam= file.
+
+*** TODO =p17c_t_mam7_r1=
+
+#+BEGIN_SRC :tangle yes :tangle create_p17c_t_mam7_r1.sh :shebang #!/bin/bash
+CASENAME=p17c_t_mam7_r1
+
+cd ~/models/cesm1_2_2_1/scripts/
+./create_newcase -case ~/cesm1_2_2_1_cases/$CASENAME -res f19_g16 -compset FC5 -mach cheyenne -pes_file pes/p720n20.xml
+
+cd ~/cesm1_2_2_1_cases/$CASENAME
+./xmlchange CAM_CONFIG_OPTS="-phys cam5 -chem trop_mam7"
+./cesm_setup
+wget https://raw.githubusercontent.com/grandey/p17c-marc-comparison/master/user_nl_cam/user_nl_cam_$CASENAME
+mv user_nl_cam_$CASENAME user_nl_cam
+./$CASENAME.build
+ln -s /glade/scratch/bgrandey/$CASENAME/run/ scratch_run
+./xmlchange REST_OPTION="never"
+./xmlchange STOP_N=20
+./xmlchange RESUBMIT=4
+./xmlchange COMP_RUN_BARRIERS="TRUE"
+sed -i 's/regular/economy/g' $CASENAME.run
+./$CASENAME.submit
+#+END_SRC
+
+Notes:
+- Same as =p17c_t_mam7_r2=, but with different =user_nl_cam= file.
 
