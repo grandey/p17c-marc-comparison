@@ -11,7 +11,7 @@ Configure and analyse [[http://www.cesm.ucar.edu/][CESM]] simulations in order t
 3. [[https://github.com/grandey/p17c-marc-comparison/tree/master/user_nl_cam][user_nl_cam/]] contains the =user_nl_cam= namelist files for the simulations.
 4. [[https://github.com/grandey/p17c-marc-comparison/tree/master/config_simulations][config_simulations/]] contains information and scripts for *creating, building, and submitting* the simulations. [[https://github.com/grandey/p17c-marc-comparison/blob/master/config_simulations/config_comparison_simulations.org][config_comparison_simulations.org]] and [[https://github.com/grandey/p17c-marc-comparison/blob/master/config_simulations/config_timing_simulations.org][config_timing_simulations.org]] are used to generate the scripts.
 5. [[https://github.com/grandey/p17c-marc-comparison/tree/master/manage_data][manage_data/]] contains information and scripts for *managing* the simulation *output data*. [[https://github.com/grandey/p17c-marc-comparison/blob/master/manage_data/data_management.org][data_management.org]] provides the details.
-6. [[https://github.com/grandey/p17c-marc-comparison/tree/master/analysis_prelim][analysis_prelim/]] contains some scripts used for *preliminary analysis* of the simulation output data.
+6. [[https://github.com/grandey/p17c-marc-comparison/tree/master/analysis_prelim][analysis_prelim/]] contains scripts used for *preliminary analysis* of the simulation output data.
 
 ** Author
 Benjamin S. Grandey, 2017, in collaboration with [[http://www.danielrothenberg.com/][Daniel Rothenberg]], [[https://eapsweb.mit.edu/people/jqj][Qinjian Jin]], Hsiang-He Lee, and [[http://web.mit.edu/wangc/][Chien Wang]].
