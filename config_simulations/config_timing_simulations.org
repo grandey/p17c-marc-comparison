@@ -5,7 +5,7 @@
 ** General notes
 
 *** Experimental design
-For an overview of the experimental design, please see [[https://github.com/grandey/p17c-marc-comparison/blob/master/README.org][README.org]].
+For an overview of the experimental design, please see [[https://github.com/grandey/p17c-marc-comparison/blob/master/experimental_design.org][experimental_design.org]].
 
 *** CESM versions
 - The MAM3 and MAM7 simulations use CESM 1.2.2.1 (CESM 1.2.2 configured for Cheyenne), found in =~/models/cesm1_2_2_1=.
