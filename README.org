@@ -5,6 +5,14 @@
 ** Purpose
 Configure and analyse [[http://www.cesm.ucar.edu/][CESM]] simulations in order to compare /MARC/ (the /Modal Two-Moment Mixing-State-Resolving Aerosol Model for Radiation and Climate/) and [[http://www.geosci-model-dev.net/5/709/2012/][MAM]].
 
+** Contents
+1. [[https://github.com/grandey/p17c-marc-comparison/blob/master/experimental_design.org][experimental_design.org]] provides an introduction to the *experimental design*.
+2. [[https://github.com/grandey/p17c-marc-comparison/tree/master/input_data_p17c][input_data_p17c/]] contains information and scripts relating to the *input data*.
+3. [[https://github.com/grandey/p17c-marc-comparison/tree/master/user_nl_cam][user_nl_cam/]] contains the =user_nl_cam= namelist files for the simulations.
+4. [[https://github.com/grandey/p17c-marc-comparison/tree/master/config_simulations][config_simulations/]] contains information and scripts for *creating, building, and submitting* the simulations. [[https://github.com/grandey/p17c-marc-comparison/blob/master/config_simulations/config_comparison_simulations.org][config_comparison_simulations.org]] and [[https://github.com/grandey/p17c-marc-comparison/blob/master/config_simulations/config_timing_simulations.org][config_timing_simulations.org]] are used to generate the scripts.
+5. [[https://github.com/grandey/p17c-marc-comparison/tree/master/manage_data][manage_data/]] contains information and scripts for *managing* the simulation *output data*. [[https://github.com/grandey/p17c-marc-comparison/blob/master/manage_data/data_management.org][data_management.org]] provides the details.
+6. [[https://github.com/grandey/p17c-marc-comparison/tree/master/analysis_prelim][analysis_prelim/]] contains some scripts used for *preliminary analysis* of the simulation output data.
+
 ** Status
 
 *** Completed
