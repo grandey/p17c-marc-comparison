@@ -14,5 +14,6 @@ ln -s /glade/scratch/bgrandey/$CASENAME/run/ scratch_run
 ./xmlchange REST_OPTION="never"
 ./xmlchange STOP_N=20
 ./xmlchange RESUBMIT=4
+./xmlchange COMP_RUN_BARRIERS="TRUE"
 sed -i 's/regular/economy/g' $CASENAME.run
 ./$CASENAME.submit

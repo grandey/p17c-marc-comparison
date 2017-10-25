@@ -23,15 +23,19 @@ The =user_nl_cam= files will be pulled from GitHub using =wget=.
 *** Symbolic link to run directory
 To facilitate ease of access to the run directory, I like to create a symbolic link (=ln -s /glade/scratch/bgrandey/$CASENAME/run/ scratch_run=).
 
+*** =env_run.xml= variables
+For timing purposes, run for 20 days, with no output. Resubmit four times, to produce five runs in total for each case. Setting =COMP_RUN_BARRIERS= prevents resubmission from modifying =CONTINUE_RUN=.
+
 *** Submission to the =economy= queue
 By default, my =.run= files are configured for submission to the =regular= queue. In order to submit to the =economy= queue, the =.run= file can be modified using =sed -i 's/regular/economy/g' $CASENAME.run=.
 
-** Creation, configuration, and submission of comparison simulations
+** Creation, configuration, and submission of timing simulation cases
 
 The source code blocks below are tangled using =C-c C-v t= in order to create bash scripts named =create_<CASENAME>.sh=.
-All three simulations will been created, configured, built, and submitted using these bash scripts on 2017-10-25.
+All three simulations have been created, configured, built, and submitted using these bash scripts on 2017-10-25.
 
-*** TODO =p17c_t_marc_r2=
+*** DONE =p17c_t_marc_r2=
+CLOSED: [2017-10-25 Wed 13:45]
 
 #+BEGIN_SRC :tangle yes :tangle create_p17c_t_marc_r2.sh :shebang #!/bin/bash
 CASENAME=p17c_t_marc_r2
@@ -49,6 +53,7 @@ ln -s /glade/scratch/bgrandey/$CASENAME/run/ scratch_run
 ./xmlchange REST_OPTION="never"
 ./xmlchange STOP_N=20
 ./xmlchange RESUBMIT=4
+./xmlchange COMP_RUN_BARRIERS="TRUE"
 sed -i 's/regular/economy/g' $CASENAME.run
 ./$CASENAME.submit
 #+END_SRC
@@ -57,8 +62,10 @@ Notes:
 - Model directory is =~/models/cesm1221_marc/=.
 - =compset= is =FC5MARC=.
 - =CAM_CONFIG_OPTS= are =-phys cam5 -chem trop_marc=.
+- Case configured, built, and submitted on 2017-10-25.
 
-*** TODO =p17c_t_mam3_r2=
+*** DONE =p17c_t_mam3_r2=
+CLOSED: [2017-10-25 Wed 13:45]
 
 #+BEGIN_SRC :tangle yes :tangle create_p17c_t_mam3_r2.sh :shebang #!/bin/bash
 CASENAME=p17c_t_mam3_r2
@@ -75,6 +82,7 @@ ln -s /glade/scratch/bgrandey/$CASENAME/run/ scratch_run
 ./xmlchange REST_OPTION="never"
 ./xmlchange STOP_N=20
 ./xmlchange RESUBMIT=4
+./xmlchange COMP_RUN_BARRIERS="TRUE"
 sed -i 's/regular/economy/g' $CASENAME.run
 ./$CASENAME.submit
 #+END_SRC
@@ -82,8 +90,10 @@ sed -i 's/regular/economy/g' $CASENAME.run
 Notes:
 - Model directory is =~/models/cesm1_2_2_1/=.
 - =compset= is =FC5=.
+- Case configured, built, and submitted on 2017-10-25.
 
-*** TODO =p17c_t_mam7_r2=
+*** DONE =p17c_t_mam7_r2=
+CLOSED: [2017-10-25 Wed 13:45]
 
 #+BEGIN_SRC :tangle yes :tangle create_p17c_t_mam7_r2.sh :shebang #!/bin/bash
 CASENAME=p17c_t_mam7_r2
@@ -101,6 +111,7 @@ ln -s /glade/scratch/bgrandey/$CASENAME/run/ scratch_run
 ./xmlchange REST_OPTION="never"
 ./xmlchange STOP_N=20
 ./xmlchange RESUBMIT=4
+./xmlchange COMP_RUN_BARRIERS="TRUE"
 sed -i 's/regular/economy/g' $CASENAME.run
 ./$CASENAME.submit
 #+END_SRC
@@ -109,4 +120,5 @@ Notes:
 - Model directory is =~/models/cesm1_2_2_1/=.
 - =compset= is =FC5=.
 - =CAM_CONFIG_OPTS= are =-phys cam5 -chem trop_mam7=.
+- Case configured, built, and submitted on 2017-10-25.
 

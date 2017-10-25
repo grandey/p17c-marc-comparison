@@ -231,12 +231,16 @@ CLOSED: [2017-08-23 Wed 16:30]
 CLOSED: [2017-08-24 Thu 12:39]
 ***** DONE Convert lnd h0 and cice h data from comparison simulations to time-series format on Newton
 CLOSED: [2017-10-24 Tue 18:54]
+***** DONE Design and finalize =user_nl_cam= files for timing simulations
+CLOSED: [2017-10-25 Wed 13:51]
+***** DONE Design and finalize configuration of timing simulations
+CLOSED: [2017-10-25 Wed 13:51]
+***** DONE Create and submit timing simulations
+CLOSED: [2017-10-25 Wed 13:51]
 
 *** Still to-do
+***** TODO Store copy of output from timing simulations on Newton
 ***** TODO Continue preliminary analysis of comparison simulations
-***** TODO Design and finalize =user_nl_cam= files for timing simulations
-***** TODO Design and finalize configuration of timing simulations
-***** TODO Create and submit timing simulations
 
 ** Author
 Benjamin S. Grandey, 2017, in collaboration with [[http://www.danielrothenberg.com/][Daniel Rothenberg]], [[https://eapsweb.mit.edu/people/jqj][Qinjian Jin]], and [[http://web.mit.edu/wangc/][Chien Wang]].
