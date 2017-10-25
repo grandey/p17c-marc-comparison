@@ -3,7 +3,7 @@
 #+OPTIONS: ^:nil
 
 ** Purpose
-Configure and analyse [[http://www.cesm.ucar.edu/][CESM]] simulations in order to compare /MARC/ (the /Modal Two-Moment Mixing-State-Resolving Aerosol Model for Radiation and Climate/) and [[http://www.geosci-model-dev.net/5/709/2012/][MAM]].
+Configure and analyse [[http://www.cesm.ucar.edu/][CESM]] simulations in order to compare /MARC/ (the /two-Moment, Multi-Modal, Mixing-state-resolving Aerosol model for Research of Climate/) and [[http://www.geosci-model-dev.net/5/709/2012/][MAM]].
 
 ** Contents
 1. [[https://github.com/grandey/p17c-marc-comparison/blob/master/experimental_design.org][experimental_design.org]] provides an introduction to the *experimental design*.
@@ -14,7 +14,7 @@ Configure and analyse [[http://www.cesm.ucar.edu/][CESM]] simulations in order t
 6. [[https://github.com/grandey/p17c-marc-comparison/tree/master/analysis_prelim][analysis_prelim/]] contains some scripts used for *preliminary analysis* of the simulation output data.
 
 ** Author
-Benjamin S. Grandey, 2017, in collaboration with [[http://www.danielrothenberg.com/][Daniel Rothenberg]], [[https://eapsweb.mit.edu/people/jqj][Qinjian Jin]], and [[http://web.mit.edu/wangc/][Chien Wang]].
+Benjamin S. Grandey, 2017, in collaboration with [[http://www.danielrothenberg.com/][Daniel Rothenberg]], [[https://eapsweb.mit.edu/people/jqj][Qinjian Jin]], Hsiang-He Lee, and [[http://web.mit.edu/wangc/][Chien Wang]].
 
 ** Acknowledgements
 This research is supported by the National Research Foundation of Singapore under its Campus for Research Excellence and Technological Enterprise programme. The Center for Environmental Sensing and Modeling is an interdisciplinary research group of the Singapore-MIT Alliance for Research and Technology.  This research is also supported by the U.S. National Science Foundation (AGS-1339264) and the U.S. Department of Energy, Office of Science (DE-FG02-94ER61937). We would like to acknowledge high-performance computing support from Cheyenne (doi:10.5065/D6RX99HX) provided by NCAR's Computational and Information Systems Laboratory, sponsored by the National Science Foundation. Thanks are due to Zheng Lu and Xiaohong Liu for advice about model configuration, especially MAM7.

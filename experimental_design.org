@@ -24,6 +24,7 @@ The simulations will be configured as follows:
 6. A resolution of *f19_g16* will be specified.
 7. Each simulation will be run for *32 years*, and the first two years will be excluded as spin-up. (Nudgding will not be performed.)
 8. The simulations will be performed on *Cheyenne*, using 720 processors (20 nodes).
+9. The standard *ARG* activation scheme will be used.
 
 Please see [[https://github.com/grandey/p17c-marc-comparison/blob/master/config_simulations/config_comparison_simulations.org][config_comparison_simulations.org]] and [[https://github.com/grandey/p17c-marc-comparison/tree/master/user_nl_cam][user_nl_cam/]] for further details.
 
