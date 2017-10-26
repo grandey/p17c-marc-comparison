@@ -29,8 +29,10 @@ CLOSED: [2017-10-25 Wed 15:03]
 CLOSED: [2017-10-25 Wed 15:03]
 ***** DONE Create and submit timing simulations
 CLOSED: [2017-10-25 Wed 16:14]
+***** DONE Store copy of output from timing simulations on Newton
+CLOSED: [2017-10-26 Thu 11:45]
+***** DONE Continue preliminary analysis of comparison simulations
+CLOSED: [2017-10-26 Thu 15:04]
 
 *** Still to-do
-***** TODO Store copy of output from timing simulations on Newton
-***** TODO Continue preliminary analysis of comparison simulations
 

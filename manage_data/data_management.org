@@ -168,3 +168,16 @@ do
 done
 #+END_SRC
 
+**** Syncing timing data from timing simulations
+
+#+BEGIN_SRC
+CASENAME_LIST="p17c_t_marc_r2 p17c_t_marc_r1 p17c_t_mam3_r2 p17c_t_mam3_r1 p17c_t_mam7_r2 p17c_t_mam7_r1"
+
+for CASENAME in $CASENAME_LIST
+do
+  rsync -av --progress -e "ssh -p $NEWTON_PORT" \
+        $NEWTON_USER@$NEWTON_IP:/orchard/grandey/data2/acrc/RUN/archive/$CASENAME/arch_case/$CASENAME/timing/ccsm_timing.* \
+        $HOME/data/projects/p17c_marc_comparison/output_timing/
+done
+#+END_SRC
+
