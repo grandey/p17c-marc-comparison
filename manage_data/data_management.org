@@ -159,7 +159,7 @@ done
 
 #+BEGIN_SRC
 CASENAME_LIST="p17c_mam3_2000 p17c_mam3_1850 p17c_mam7_2000 p17c_marc_2000 p17c_marc_1850"
-VARIABLE_LIST="fs albsno albice"
+VARIABLE_LIST="fs"
 
 for CASENAME in $CASENAME_LIST
 do
