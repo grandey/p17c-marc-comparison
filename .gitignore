@@ -2,4 +2,4 @@ test_*
 temp.pdf
 .ipynb_checkpoints
 local
-manuscript_versions
+gitignore_*
