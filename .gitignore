@@ -2,4 +2,3 @@ test_*
 temp.pdf
 .ipynb_checkpoints
 local
-gitignore_*
