@@ -32,7 +32,7 @@ please seek permission from Benjamin if you would like to use any of the
 material.
 If any of the material is accepted for publication in a journal, such material
 will likely be subject to the copyright policies of the journal - in such cases,
-please referto the journal's copyright policies.
+please refer to the journal's copyright policies.
 
 ALL CONTENT IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
