@@ -2,7 +2,7 @@
 #+AUTHOR: Benjamin S. Grandey
 #+OPTIONS: ^:nil
 
-** Configuration and analysis for "Effective radiative forcing in the aerosol-climate model CAM5.3-MARC-ARG compared to default CAM5.3"
+** Introduction
 This repository contains details of the experimental design, model configuration, data management, and analysis procedure for the manuscript titled "Effective radiative forcing in the aerosol-climate model CAM5.3-MARC-ARG compared to default CAM5.3" by B. S. Grandey, D. Rothenberg, A. Avramov, Q. Jin, H.-H. Lee, and C. Wang (in preparation).
 
 ** Purpose
@@ -27,4 +27,4 @@ Benjamin S. Grandey, 2017, in collaboration with Daniel Rothenberg, Alexander Av
 This research is supported by the National Research Foundation of Singapore under its Campus for Research Excellence and Technological Enterprise programme. The Center for Environmental Sensing and Modeling is an interdisciplinary research group of the Singapore-MIT Alliance for Research and Technology.  This research is also supported by the U.S. National Science Foundation (AGS-1339264) and the U.S. Department of Energy, Office of Science (DE-FG02-94ER61937). The CESM project is supported by the National Science Foundation and the Office of Science (BER) of the U.S. Department of Energy. We would like to acknowledge high-performance computing support from Cheyenne (doi:10.5065/D6RX99HX) provided by NCAR's Computational and Information Systems Laboratory, sponsored by the National Science Foundation. Thanks are due to Zheng Lu and Xiaohong Liu for advice about model configuration, especially MAM7.
 
 ** Primary reference
-B. S. Grandey, D. Rothenberg, A. Avramov, Q. Jin, H.-H. Lee, and C. Wang (in preparation), /"Effective radiative forcing in the aerosol-climate model CAM5.3-MARC-ARG compared to default CAM5.3"/.
+B. S. Grandey, D. Rothenberg, A. Avramov, Q. Jin, H.-H. Lee, and C. Wang (in preparation), "Effective radiative forcing in the aerosol-climate model CAM5.3-MARC-ARG compared to default CAM5.3".
