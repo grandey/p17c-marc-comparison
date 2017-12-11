@@ -191,3 +191,21 @@ do
 done
 #+END_SRC
 
+*** Uploading data to Figshare
+
+**** DONE Input data
+CLOSED: [2017-12-11 Mon 15:52]
+
+=input_data_p17c.tar.gz=, orginally created on 2017-07-21, has been uploaded. It contains the scripts used to generate the MARC input data (see https://github.com/grandey/p17c-marc-comparison/tree/master/input_data_p17c) and the input data NetCDF files.
+
+**** TODO Output timeseries data from comparison simulations
+
+A subset of the atmosphere, land, and ice output NetCDF files have been previously synced to =$HOME/data/projects/p17c_marc_comparison/output_timeseries/= on the local machine (see above). The total size is approximately 18GB. These files have been uploaded.
+
+**** DONE Timing data from timing simulations
+CLOSED: [2017-12-11 Mon 19:03]
+
+The timing data from the timing files have been previously synced to =$HOME/data/projects/p17c_marc_comparison/output_timing/= on the local machine (see above). A compressed tarball, created using =tar -cvzf output_timing.tar.gz output_timing/=, has been uploaded.
+
+**** History of Figshare publication
+- 2017-12-11 - Uploading data. Title: Data for "Effective radiative forcing in the aerosol-climate model CAM5.3-MARC-ARG compared to default CAM5.3". Entering categories, keywords, and description. Reserving DOI. Re-uploading some failed transfers. Publishing v1. https://doi.org/10.6084/m9.figshare.5687812.
