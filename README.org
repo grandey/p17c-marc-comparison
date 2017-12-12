@@ -2,6 +2,8 @@
 #+AUTHOR: Benjamin S. Grandey
 #+OPTIONS: ^:nil
 
+[[https://zenodo.org/badge/latestdoi/96524970][https://zenodo.org/badge/96524970.svg]]
+
 ** Introduction
 This repository contains details of the experimental design, model configuration, data management, and analysis procedure for the manuscript titled "Effective radiative forcing in the aerosol-climate model CAM5.3-MARC-ARG compared to default CAM5.3" by B. S. Grandey, D. Rothenberg, A. Avramov, Q. Jin, H.-H. Lee, and C. Wang (in preparation).
 
