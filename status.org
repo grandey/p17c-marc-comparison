@@ -35,4 +35,5 @@ CLOSED: [2017-10-26 Thu 11:45]
 CLOSED: [2017-10-26 Thu 15:04]
 
 *** Still to-do
-
+***** TODO Update notebooks in analysis_draft2017b/ to use Figshare data (to check reproducibility)
+***** TODO Prepare repository for v1.0.0 publication via Zenodo
