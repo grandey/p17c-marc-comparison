@@ -17,7 +17,7 @@ The year-2000 emissions simulations will facilitate comparison of aerosol fields
 
 The simulations will be configured as follows:
 1. *CESM 1.2.2.1* will be used. (This is CESM 1.2.2 configured to run on Cheyenne.)
-2. MARC commit *ff48dbe* will be used.
+2. MARC commit *ff48dbe* will be used. (https://doi.org/10.5281/zenodo.1117370.)
 3. Greenhouse gas concentrations and sea-surface temperatures (SSTs) will be prescribed using *year-2000 climatological values*, based on the =F_2000_CAM5= (=FC5=) component set.
 4. For the MARC and MAM3 simulations, the *RFP components* will be diagnosed following [[http://www.atmos-chem-phys.net/13/9971/2013/][Ghan (2013)]]. The "online" radiation call will include aerosol-radiation interactions; the "offline" diagnostic radiation call will calculate "clean-sky" fluxes.
 5. The *COSP* satellite simulator package will be activated.
