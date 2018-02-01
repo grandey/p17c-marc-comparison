@@ -37,5 +37,7 @@ CLOSED: [2017-10-26 Thu 15:04]
 CLOSED: [2017-12-12 Tue 14:20]
 ***** DONE Prepare repository for v0.3.0 publication via Zenodo, to accompany v3 draft manuscript
 CLOSED: [2017-12-12 Tue 16:35]
+***** DONE Prepare repository for v0.5.0 publication via Zenodo, to accompany v5 draft manuscript
+CLOSED: [2018-02-01 Thu 11:21]
 
 *** Still to-do
