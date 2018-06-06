@@ -10,7 +10,7 @@ ext_frc_specifier =
 
 ext_frc_type = 'CYCLICAL'
 
-ext_emis_cycle_yr = 0
+ext_frc_cycle_yr = 0
 
 srf_emis_specifier =
         'DMS       -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/trop_mozart_aero/emis/aerocom_mam3_dms_surf_2000_c090129.nc',
