@@ -39,10 +39,17 @@ CLOSED: [2017-12-12 Tue 14:20]
 CLOSED: [2017-12-12 Tue 16:35]
 ***** DONE Prepare repository for v0.5.0 publication via Zenodo, to accompany v5 draft manuscript
 CLOSED: [2018-02-01 Thu 11:21]
-***** DONE Prepare NH3 emission data for =mam7_1850= simulation
+***** DONE Prepare NH3 emission data for =p17c_mam7_1850=
 CLOSED: [2018-06-06 Wed 15:53]
-***** DONE Prepare =user_nl_cam= file for =mam7_1850= simulation
+***** DONE Prepare =user_nl_cam= file for =p17c_mam7_1850=
 CLOSED: [2018-06-06 Wed 15:53]
+***** DONE Test =mam7_1850= simulation configuration
+CLOSED: [2018-06-06 Wed 17:30]
+***** DONE Finalize configuration for =p17c_mam7_1850= and submit
+CLOSED: [2018-06-06 Wed 17:55]
 *** Still to-do
-***** TODO Test =mam7_1850= simulation configuration
-***** TODO Finalize configuration for =mam7_1850= simulation and submit
+***** TODO Store copy of output from  =p17c_mam7_1850= on Newton
+***** TODO Convert atm h0 data from =p17c_mam7_1850= to time-series format on Newton
+***** TODO Update =analysis_draft2017b/= to include =p17c_mam7_1850=
+***** TODO Upload new data files to Figshare
+

@@ -4,7 +4,7 @@
 ** Experimental design
 
 *** Comparison simulations
-In order to compare MARC, MAM3, and MAM7, five prescribed-SST simulations will be performed:
+In order to compare MARC, MAM3, and MAM7, six prescribed-SST simulations will be performed:
 | Casename         | Aerosol model | Aersosol (and precursor) emissions |
 |------------------+---------------+------------------------------------|
 | =p17c_marc_2000= | MARC          | year-2000                          |
@@ -12,6 +12,9 @@ In order to compare MARC, MAM3, and MAM7, five prescribed-SST simulations will b
 | =p17c_mam3_2000= | MAM3          | year-2000                          |
 | =p17c_mam3_1850= | MAM3          | year-1850                          |
 | =p17c_mam7_2000= | MAM7          | year-2000                          |
+| =p17c_mam7_1850= | MAM7          | year-1850                          |
+
+[Update 2018-06-06: =p17c_mam7_1850= added.]
 
 The year-2000 emissions simulations will facilitate comparison of aerosol fields, and also cloud microphysical and macrophysical fields. The year-1850 simulations will facilitate calculation of radiative flux perturbations (RFPs).
 
