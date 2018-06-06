@@ -10,8 +10,10 @@ ext_frc_specifier =
 
 ext_frc_type = 'CYCLICAL'
 
+ext_emis_cycle_yr = 0
+
 srf_emis_specifier =
-        'DMS       -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/trop_mozart_aero/emis/aerocom_mam3_dms_surf_2000_c120315.nc',
+        'DMS       -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/trop_mozart_aero/emis/aerocom_mam3_dms_surf_2000_c090129.nc',
         'NH3       -> /glade/p/work/bgrandey/input_data_p17c_mam7/emis_NH3_1850_p17c.nc',
         'SO2       -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_so2_surf_1850_c090726.nc',
         'SOAG      -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_soag_1.5_surf_1850_c100217.nc',
@@ -24,6 +26,8 @@ srf_emis_specifier =
         'so4_a2    -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_so4_a2_surf_1850_c090726.nc'
 
 srf_emis_type = 'CYCLICAL'
+
+srf_emis_cycle_yr = 0
 
 rad_diag_1 =
         'A:Q:H2O', 'N:O2:O2', 'N:CO2:CO2', 'N:ozone:O3',
