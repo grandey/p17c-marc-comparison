@@ -39,5 +39,10 @@ CLOSED: [2017-12-12 Tue 14:20]
 CLOSED: [2017-12-12 Tue 16:35]
 ***** DONE Prepare repository for v0.5.0 publication via Zenodo, to accompany v5 draft manuscript
 CLOSED: [2018-02-01 Thu 11:21]
-
+***** DONE Prepare NH3 emission data for =mam7_1850= simulation
+CLOSED: [2018-06-06 Wed 15:53]
+***** DONE Prepare =user_nl_cam= file for =mam7_1850= simulation
+CLOSED: [2018-06-06 Wed 15:53]
 *** Still to-do
+***** TODO Test =mam7_1850= simulation configuration
+***** TODO Finalize configuration for =mam7_1850= simulation and submit
