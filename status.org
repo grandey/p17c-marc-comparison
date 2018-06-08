@@ -51,7 +51,8 @@ CLOSED: [2018-06-06 Wed 17:55]
 CLOSED: [2018-06-08 Fri 15:23]
 ***** DONE Convert atm h0 data from =p17c_mam7_1850= to time-series format on Newton
 CLOSED: [2018-06-08 Fri 15:23]
+***** DONE Update =analysis_draft2017b/= to include =p17c_mam7_1850=
+CLOSED: [2018-06-08 Fri 17:18]
 *** Still to-do
-***** TODO Update =analysis_draft2017b/= to include =p17c_mam7_1850=
 ***** TODO Upload new data files to Figshare
 
