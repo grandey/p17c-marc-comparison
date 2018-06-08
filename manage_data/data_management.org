@@ -6,6 +6,8 @@
 *** Saving a copy of the output data to Newton
 Please see [[https://github.com/grandey/p17c-marc-comparison/blob/master/manage_data/archive_case_dir_p17c.sh][archive_case_dir_p17c.sh]], [[https://github.com/grandey/p17c-marc-comparison/blob/master/manage_data/gzip_netcdf_p17c.sh][gzip_netcdf_p17c.sh]], and [[https://github.com/grandey/p17c-marc-comparison/blob/master/manage_data/rsync_archive_to_newton.sh][rsync_archive_to_newton.sh]], which outline the workflow for the data from the comparison simulations.
 
+Update 2018-06-07: Data from the =p17c_mam7_1850= simulation have been separately saved to Newton, using some of the code contained in the three scripts mentioned above.
+
 *** Converting from time-slice to time-series format
 After gunzipping a copy of the output history files on Newton, [[https://github.com/NCAR/PyReshaper][PyReshaper]] (v1.0.1) can be used to convert to time-series format. I have =PyReshaper= installed in a separate =conda= environment:
 
@@ -90,6 +92,10 @@ do
 done
 #+END_SRC
 
+**** Converting =p17c_mam7_1850= data to time-series format
+
+Update 2018-06-07: Data from the =p17c_mam7_1850= simulation have been separately converted to time-series format, using the same methodology as for the five other comparison simulations.
+
 *** Syncing to local machine for analysis
 Data of interest can then be pulled from Newton using rsync.
 
@@ -118,7 +124,7 @@ CCN3"
 MAM fields of interest:
 
 #+BEGIN_SRC
-CASENAME_LIST="p17c_mam3_2000 p17c_mam3_1850 p17c_mam7_2000"
+CASENAME_LIST="p17c_mam3_2000 p17c_mam3_1850 p17c_mam7_2000 p17c_mam7_1850"
 VARIABLE_LIST=" \
 FSNTOA FSNTOA_d1 FSNTOAC_d1 FSNS FSNS_d1 SWCF_d1 LWCF \
 BURDENSO4 BURDENPOM BURDENBC BURDENSEASALT BURDENDUST \
@@ -147,7 +153,7 @@ done
 **** Syncing land output data
 
 #+BEGIN_SRC
-CASENAME_LIST="p17c_mam3_2000 p17c_mam3_1850 p17c_mam7_2000 p17c_marc_2000 p17c_marc_1850"
+CASENAME_LIST="p17c_mam3_2000 p17c_mam3_1850 p17c_mam7_2000 p17c_mam7_1850 p17c_marc_2000 p17c_marc_1850"
 VARIABLE_LIST="FSNO SNOBCMSL BCDEP"
 
 for CASENAME in $CASENAME_LIST
@@ -164,7 +170,7 @@ done
 **** Syncing ice output data
 
 #+BEGIN_SRC
-CASENAME_LIST="p17c_mam3_2000 p17c_mam3_1850 p17c_mam7_2000 p17c_marc_2000 p17c_marc_1850"
+CASENAME_LIST="p17c_mam3_2000 p17c_mam3_1850 p17c_mam7_2000 p17c_mam7_1850 p17c_marc_2000 p17c_marc_1850"
 VARIABLE_LIST="fs"
 
 for CASENAME in $CASENAME_LIST
@@ -193,12 +199,11 @@ done
 
 *** Uploading data to Figshare
 
-**** DONE Input data
-CLOSED: [2017-12-11 Mon 15:52]
+**** WAIT Input data - add p17c_mam7_1850 NH3 emissions file
 
 =input_data_p17c.tar.gz=, orginally created on 2017-07-21, has been uploaded. It contains the scripts used to generate the MARC input data (see https://github.com/grandey/p17c-marc-comparison/tree/master/input_data_p17c) and the input data NetCDF files.
 
-**** Output timeseries data from comparison simulations
+**** WAIT Output timeseries data from comparison simulations - add p17c_mam7_1850 output
 
 A subset of the atmosphere, land, and ice output NetCDF files have been previously synced to =$HOME/data/projects/p17c_marc_comparison/output_timeseries/= on the local machine (see above). The total size is approximately 18GB. These files have been uploaded.
 

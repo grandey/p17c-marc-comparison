@@ -47,9 +47,11 @@ CLOSED: [2018-06-06 Wed 15:53]
 CLOSED: [2018-06-06 Wed 17:30]
 ***** DONE Finalize configuration for =p17c_mam7_1850= and submit
 CLOSED: [2018-06-06 Wed 17:55]
+***** DONE Store copy of output from  =p17c_mam7_1850= on Newton
+CLOSED: [2018-06-08 Fri 15:23]
+***** DONE Convert atm h0 data from =p17c_mam7_1850= to time-series format on Newton
+CLOSED: [2018-06-08 Fri 15:23]
 *** Still to-do
-***** TODO Store copy of output from  =p17c_mam7_1850= on Newton
-***** TODO Convert atm h0 data from =p17c_mam7_1850= to time-series format on Newton
 ***** TODO Update =analysis_draft2017b/= to include =p17c_mam7_1850=
 ***** TODO Upload new data files to Figshare
 
