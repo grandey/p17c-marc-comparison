@@ -1,14 +1,14 @@
 ,Organic carbon aerosol,in pure OC,in MOS
-"Sources, Tg/yr",80.82 ± 0.00,80.82 ± 0.00,5.91 ± 0.01
-Emission,80.82 ± 0.00,80.82 ± 0.00,
-Aging (source),,,5.25 ± 0.01
-Coagulation (source),,,0.67 ± 0.00
+"Sources, Tg/yr",+80.82 ± 0.00,+80.82 ± 0.00,+5.91 ± 0.01
+Emission,+80.82 ± 0.00,+80.82 ± 0.00,
+Aging (source),,,+5.25 ± 0.01
+Coagulation (source),,,+0.67 ± 0.00
 "Sinks, Tg/yr",-80.77 ± 0.01,-80.75 ± 0.01,-5.94 ± 0.01
 Aging (sink),,-5.25 ± 0.01,
 Coagulation (sink),,-0.67 ± 0.00,
 Nucleation scavenging by stratiform clouds,-3.20 ± 0.01,-0.00 ± 0.00,-3.20 ± 0.01
-Nucleation scavenging by convective clouds,-0.22 ± 0.00,0.00 ± 0.00,-0.22 ± 0.00
+Nucleation scavenging by convective clouds,-0.22 ± 0.00,+0.00 ± 0.00,-0.22 ± 0.00
 Impaction scavenging,-74.10 ± 0.01,-71.68 ± 0.01,-2.42 ± 0.01
 Dry deposition,-3.26 ± 0.00,-3.15 ± 0.00,-0.11 ± 0.00
-"Burden, Tg",1.17 ± 0.00,1.07 ± 0.00,0.10 ± 0.00
-"Lifetime, days",5.30 ± 0.01,4.83 ± 0.01,6.38 ± 0.04
+"Burden, Tg",+1.17 ± 0.00,+1.07 ± 0.00,+0.10 ± 0.00
+"Lifetime, days",+5.30 ± 0.01,+4.83 ± 0.01,+6.38 ± 0.04
