@@ -1,5 +1,5 @@
 dust_emis_fact = 0.35D0
-soil_erod      = '/glade/p/work/bgrandey/input_data_p17c/dst_source2x2tuned-cam4-06132012.nc'
+soil_erod      = '/glade/work/bgrandey/input_data_p17c/dst_source2x2tuned-cam4-06132012.nc'
 
 history_aero_optics = .true.
 
