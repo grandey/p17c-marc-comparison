@@ -53,6 +53,14 @@ CLOSED: [2018-06-08 Fri 15:23]
 CLOSED: [2018-06-08 Fri 15:23]
 ***** DONE Update =analysis_draft2017b/= to include =p17c_mam7_1850=
 CLOSED: [2018-06-08 Fri 17:18]
+***** DONE Produce =marc_s2= emissions files
+CLOSED: [2018-07-23 Mon 15:14]
 *** Still to-do
+***** TODO Design and check configuration of =marc_s2= simulations
+***** TODO Create and submit =marc_s2= simulations
+***** TODO Store copy of output from =marc_s2= simulations on newton
+***** TODO Convert data from =marc_s2= simulations to time-series format on Newton
+***** TODO Update analysis to use =marc_s2= data
+***** TODO Finalise updated analysis (following 1st round of referee comments)
 ***** TODO Upload new data files to Figshare
 

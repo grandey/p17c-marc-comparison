@@ -3,7 +3,7 @@
 ; which was originally committed to marc_input repository by
 ; darothen on 8-April-2017 (commit id 895619c).
 ; This version has been modified by B.S.Grandey in order to produce
-; the BC/OC/VOC emissions file for *p17c_marc_2000*.
+; the BC/OC/VOC emissions file for *p17c_marc_s2_2000*.
 ; The intention is for the emissions to be consistent with those
 ; for p17c_mam3_2000, which uses the default MAM3 emissions files.
 ;=================================================================
@@ -33,7 +33,7 @@ mam3verBCfname  = 'ar5_mam3_bc_elev_2000_c090726.nc'
 mam3verOCfname  = 'ar5_mam3_oc_elev_2000_c090726.nc' 
 
 ;output file
-MITaer_fname =  'emis_p17c_marc_2000.nc' 
+MITaer_fname =  'emis_p17c_marc_s2_2000.nc' 
 
 ;----------------  read surface data  ----------------
 fname = fdir + mam3sfcBCfname
@@ -194,7 +194,7 @@ mam3OCver = DOUBLE( tr1 + tr2 )
 ;convert 3D level emissions to 2D surface emission equiv.
 ;and add them to the surface emissions
 zint *= 1.d5 ;level thickness from km to cm
-for iz=1,nlev-1 do begin
+for iz=0,nlev-1 do begin  ;iz=1 changed to iz=0 on 2018-07-23
   dz = zint(iz+1)-zint(iz)
   mam3BCsfc += mam3BCver(*,*,iz,*)*dz 
   mam3OCsfc += mam3OCver(*,*,iz,*)*dz 

@@ -14,8 +14,8 @@ set mam3SO4lev1 = $mam3dir/ar5_mam3_so4_a1_elev_2000_c090726.nc
 set mam3SO4lev2 = $mam3dir/ar5_mam3_so4_a2_elev_2000_c090726.nc
 
 #MITaer filenames
-set SO4SFCFILE = so4_surf_p17c_marc_2000.nc
-set SO4LEVFILE = so4_elev_p17c_marc_2000.nc
+set SO4SFCFILE = so4_surf_p17c_marc_s2_2000.nc
+set SO4LEVFILE = so4_elev_p17c_marc_s2_2000.nc
 
 #paranoid
 echo " "

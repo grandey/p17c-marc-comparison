@@ -5,16 +5,18 @@
 
 *** Comparison simulations
 In order to compare MARC, MAM3, and MAM7, six prescribed-SST simulations will be performed:
-| Casename         | Aerosol model | Aersosol (and precursor) emissions |
-|------------------+---------------+------------------------------------|
-| =p17c_marc_2000= | MARC          | year-2000                          |
-| =p17c_marc_1850= | MARC          | year-1850                          |
-| =p17c_mam3_2000= | MAM3          | year-2000                          |
-| =p17c_mam3_1850= | MAM3          | year-1850                          |
-| =p17c_mam7_2000= | MAM7          | year-2000                          |
-| =p17c_mam7_1850= | MAM7          | year-1850                          |
+| Casename            | Aerosol model | Aersosol (and precursor) emissions |
+|---------------------+---------------+------------------------------------|
+| =p17c_marc_s2_2000= | MARC          | year-2000                          |
+| =p17c_marc_s2_1850= | MARC          | year-1850                          |
+| =p17c_mam3_2000=    | MAM3          | year-2000                          |
+| =p17c_mam3_1850=    | MAM3          | year-1850                          |
+| =p17c_mam7_2000=    | MAM7          | year-2000                          |
+| =p17c_mam7_1850=    | MAM7          | year-1850                          |
 
 [Update 2018-06-06: =p17c_mam7_1850= added.]
+
+[Update 2018-07-20: following modifications to the MARC OC emissions, =p17c_marc_1850= and =p17c_marc_2000= are being replaced by =p17c_marc_s2_1850= and =p17c_marc_s2_2000=, where =s2= indicates that these are modified "version 2" simulations.]
 
 The year-2000 emissions simulations will facilitate comparison of aerosol fields, and also cloud microphysical and macrophysical fields. The year-1850 simulations will facilitate calculation of radiative flux perturbations (RFPs).
 
