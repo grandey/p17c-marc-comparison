@@ -1,6 +1,5 @@
 #!/bin/bash
-
-CASENAME=p17c_marc_1850
+CASENAME=p17c_marc_s2_1850
 
 cd ~/models/cesm1221_marc/scripts/
 ./create_newcase -case ~/cesm1_2_2_1_cases/$CASENAME -res f19_g16 -compset FC5MARC -mach cheyenne -pes_file pes/p720n20.xml

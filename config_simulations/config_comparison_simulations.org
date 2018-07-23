@@ -36,14 +36,19 @@ By default, my =.run= files are configured for submission to the =regular= queue
 ** Creation, configuration, and submission of comparison simulations
 
 The source code blocks below are tangled using =C-c C-v t= in order to create bash scripts named =create_<CASENAME>.sh=.
-The original five comparison simulations have been created, configured, built, and submitted using these bash scripts on 2017-07-21.
+
+The third (=p17c_mam3_2000=), fourth (=p17c_mam3_2000=), and fifth comparison (=p17c_mam7_2000=) simulations have been created, configured, built, and submitted on 2017-07-21.
 The sixth comparison simulation (=p17c_mam7_2000=) has been created, configured, built, and submitted using the sixth bash script on 2018-06-06.
+The first and second comparison simulations (=p17c_marc_s2_2000=, =p17c_marc_s2_1850=), which supersede the two earlier simulations (=p17c_marc_2000=, =p17c_marc_1850=) have been created, configured, built, and submitted on 2018-07-23.
 
-*** DONE =p17c_marc_2000=
-CLOSED: [2017-07-21 Fri 14:38]
 
-#+BEGIN_SRC :tangle yes :tangle create_p17c_marc_2000.sh :shebang #!/bin/bash
-CASENAME=p17c_marc_2000
+*** DONE =p17c_marc_s2_2000=
+CLOSED: [2018-07-23 Mon 16:37]
+
+[Update 2018-07-23: =p17c_marc_2000= superseded by =p17c_marc_s2_2000=.]
+
+#+BEGIN_SRC :tangle yes :tangle create_p17c_marc_s2_2000.sh :shebang #!/bin/bash
+CASENAME=p17c_marc_s2_2000
 
 cd ~/models/cesm1221_marc/scripts/
 ./create_newcase -case ~/cesm1_2_2_1_cases/$CASENAME -res f19_g16 -compset FC5MARC -mach cheyenne -pes_file pes/p720n20.xml
@@ -67,13 +72,16 @@ Notes:
 - Model directory is =~/models/cesm1221_marc/=.
 - =compset= is =FC5MARC=.
 - =CAM_CONFIG_OPTS= are =-phys cam5 -chem trop_marc -cosp=.
-- Case created, configured, built, and submitted on 2017-07-21.
+- =p17c_marc_2000= created, configured, built, and submitted on 2017-07-21.
+- =p17c_marc_s2_2000= created, configured, built, and submitted on 2018-07-23.
 
-*** DONE =p17c_marc_1850=
-CLOSED: [2017-07-21 Fri 14:39]
+*** DONE =p17c_marc_s2_1850=
+CLOSED: [2018-07-23 Mon 16:46]
 
-#+BEGIN_SRC :tangle yes :tangle create_p17c_marc_1850.sh :shebang #!/bin/bash
-CASENAME=p17c_marc_1850
+[Update 2018-07-23: =p17c_marc_1850= superseded by =p17c_marc_s2_1850=.]
+
+#+BEGIN_SRC :tangle yes :tangle create_p17c_marc_s2_1850.sh :shebang #!/bin/bash
+CASENAME=p17c_marc_s2_1850
 
 cd ~/models/cesm1221_marc/scripts/
 ./create_newcase -case ~/cesm1_2_2_1_cases/$CASENAME -res f19_g16 -compset FC5MARC -mach cheyenne -pes_file pes/p720n20.xml
@@ -94,8 +102,9 @@ sed -i 's/regular/economy/g' $CASENAME.run
 #+END_SRC
 
 Notes:
-- Same as =p17c_marc_2000= above, but with different =$CASENAME= (and =user_nl_cam= file).
-- Case created, configured, built, and submitted on 2017-07-21.
+- Same as =p17c_marc_s2_2000= above, but with different =$CASENAME= (and =user_nl_cam= file).
+- =p17c_marc_1850= created, configured, built, and submitted on 2017-07-21.
+- =p17c_marc_s2_1850= created, configured, built, and submitted on 2018-07-23.
 
 *** DONE =p17c_mam3_2000=
 CLOSED: [2017-07-21 Fri 14:40]
