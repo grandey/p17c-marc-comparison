@@ -63,8 +63,9 @@ CLOSED: [2018-07-23 Mon 16:47]
 CLOSED: [2018-07-26 Thu 12:36]
 ***** DONE Convert data from =marc_s2= simulations to time-series format on Newton
 CLOSED: [2018-07-27 Fri 16:21]
+***** DONE Update analysis to use =marc_s2= data
+CLOSED: [2018-07-30 Mon 15:39]
 *** Still to-do
-***** TODO Update analysis to use =marc_s2= data
 ***** TODO Finalise updated analysis (following 1st round of referee comments)
 ***** TODO Upload new data files to Figshare
 
