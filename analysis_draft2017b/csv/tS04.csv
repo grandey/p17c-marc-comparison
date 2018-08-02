@@ -1,8 +1,8 @@
-,Dust aerosol,Sea salt aerosol
-"Sources, Tg/yr",+3789.26 ± 21.87,+5510.06 ± 14.81
-    Emission,+3789.26 ± 21.87,+5510.06 ± 14.81
-"Sinks, Tg/yr",-3812.70 ± 21.36,-5559.09 ± 14.96
-    Impaction scavenging,-1898.77 ± 8.88,-2327.11 ± 5.73
-    Dry deposition,-1913.94 ± 14.32,-3231.97 ± 9.45
-"Burden, Tg",+41.83 ± 0.24,+9.66 ± 0.02
-"Lifetime, days",+4.00 ± 0.03,+0.63 ± 0.00
+,Sea salt aerosol,Dust aerosol
+"Sources, Tg/yr",+5510.06 ± 14.81,+3789.26 ± 21.87
+    Emission,+5510.06 ± 14.81,+3789.26 ± 21.87
+"Sinks, Tg/yr",-5559.09 ± 14.96,-3812.70 ± 21.36
+    Impaction scavenging,-2327.11 ± 5.73,-1898.77 ± 8.88
+    Dry deposition,-3231.97 ± 9.45,-1913.94 ± 14.32
+"Burden, Tg",+9.66 ± 0.02,+41.83 ± 0.24
+"Lifetime, days",+0.63 ± 0.00,+4.00 ± 0.03
