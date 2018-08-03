@@ -219,13 +219,17 @@ done
 
 *** Uploading data to Figshare
 
-**** WAIT Input data - add =p17c_mam7_1850= NH3 emissions file
+**** DONE Input data
+CLOSED: [2018-08-03 Fri 10:45]
 
-=input_data_p17c.tar.gz=, orginally created on 2017-07-21, has been uploaded. It contains the scripts used to generate the MARC input data (see https://github.com/grandey/p17c-marc-comparison/tree/master/input_data_p17c) and the input data NetCDF files.
+Updated version of =input_data_p17c.tar.gz=, containing =marc_s2= input data, has been uploaded. It contains the scripts used to generate the MARC input data (see https://github.com/grandey/p17c-marc-comparison/tree/master/input_data_p17c) and the input data NetCDF files.
 
-**** WAIT Output timeseries data from comparison simulations - add =p17c_mam7_1850= and =marc_s2= output
+**** DONE Output timeseries data from comparison simulations
+CLOSED: [2018-08-03 Fri 19:49]
 
-A subset of the atmosphere, land, and ice output NetCDF files have been previously synced to =$HOME/data/projects/p17c_marc_comparison/output_timeseries/= on the local machine (see above). The total size is approximately 18GB. These files have been uploaded.
+A subset of the atmosphere, land, and ice output NetCDF files have been previously synced to =$HOME/data/projects/p17c_marc_comparison/output_timeseries/= on the local machine (see above). These files have been uploaded.
+
+UPDATE 2018-08-03: the Figshare repository has been updated - see history of Figshare publication below. The total size of the output timeseries is now approximately 65GB.
 
 **** DONE Timing data from timing simulations
 CLOSED: [2017-12-11 Mon 19:03]
@@ -235,3 +239,8 @@ The timing data from the timing files have been previously synced to =$HOME/data
 **** History of Figshare publication
 - 2017-12-11 - Uploading data. Title: Data for "Effective radiative forcing in the aerosol-climate model CAM5.3-MARC-ARG compared to default CAM5.3". Entering categories, keywords, and description. Reserving DOI. Re-uploading some failed transfers. Publishing v1. [[https://doi.org/10.6084/m9.figshare.5687812.v1]].
 - 2018-02-01 - Changes to title and description, to correspond with v5 of draft manuscript. Publishing [[https://doi.org/10.6084/m9.figshare.5687812.v2]].
+- 2018-08-03a - Replacing original =input_data_p17c.tar.gz= with version containing =marc_s2= input data. Adding =emis_NH3_1850_p17c.nc= (input data for year-1850 MAM7 simulation). Adding =BURDENSOA= timeseries data for =mam3= and =mam7_2000= simulations. Adding =mam7_1850= timeseries data. Removing =marc_1850= and =marc_2000= timeseries data. Publishing https://doi.org/10.6084/m9.figshare.5687812.v3.
+- 2018-08-03b - Uploading batch 1/2 of =marc_s2_1850= output data (=AGEmBC= to =mBIMWET=, 70 files), 17.2GB, within figshare quota. Publishing https://doi.org/10.6084/m9.figshare.5687812.v4.
+- 2018-08-03c - Uploading batch 2/2 of =marc_s2_1850= output data (=mMBS= to =SNOBCMSL=, 61 files), 13.2GB. Publishing https://doi.org/10.6084/m9.figshare.5687812.v5.
+- 2018-08-03d - Uploading batch 1/2 of =marc_s2_2000= output data. Publishing https://doi.org/10.6084/m9.figshare.5687812.v6.
+- 2018-08-03d - Uploading batch 2/2 of =marc_s2_2000= output data. Publishing https://doi.org/10.6084/m9.figshare.5687812.v7.

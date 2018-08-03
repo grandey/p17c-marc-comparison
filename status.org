@@ -67,6 +67,7 @@ CLOSED: [2018-07-27 Fri 16:21]
 CLOSED: [2018-07-30 Mon 15:39]
 ***** DONE Finalise updated analysis for v6 draft (following 1st round of referee comments)
 CLOSED: [2018-08-03 Fri 17:27]
+***** DONE Update Figshare repository for v6 draft
+CLOSED: [2018-08-03 Fri 19:50]
 *** Still to-do
-***** TODO Upload new data files to Figshare
 
