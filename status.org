@@ -65,7 +65,8 @@ CLOSED: [2018-07-26 Thu 12:36]
 CLOSED: [2018-07-27 Fri 16:21]
 ***** DONE Update analysis to use =marc_s2= data
 CLOSED: [2018-07-30 Mon 15:39]
+***** DONE Finalise updated analysis for v6 draft (following 1st round of referee comments)
+CLOSED: [2018-08-03 Fri 17:27]
 *** Still to-do
-***** TODO Finalise updated analysis for v6 draft (following 1st round of referee comments)
 ***** TODO Upload new data files to Figshare
 
