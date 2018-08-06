@@ -12,12 +12,13 @@ Configure and analyse [[http://www.cesm.ucar.edu/][CESM]] simulations in order t
 
 ** Contents
 1. [[https://github.com/grandey/p17c-marc-comparison/blob/master/experimental_design.org][experimental_design.org]] provides an introduction to the *experimental design*.
-2. [[https://github.com/grandey/p17c-marc-comparison/tree/master/input_data_p17c][input_data_p17c/]] contains information and scripts relating to the *input data*.
-3. [[https://github.com/grandey/p17c-marc-comparison/tree/master/user_nl_cam][user_nl_cam/]] contains the =user_nl_cam= namelist files for the simulations.
-4. [[https://github.com/grandey/p17c-marc-comparison/tree/master/config_simulations][config_simulations/]] contains information and scripts for *creating, building, and submitting* the simulations. [[https://github.com/grandey/p17c-marc-comparison/blob/master/config_simulations/config_comparison_simulations.org][config_comparison_simulations.org]] and [[https://github.com/grandey/p17c-marc-comparison/blob/master/config_simulations/config_timing_simulations.org][config_timing_simulations.org]] are used to generate the scripts.
-5. [[https://github.com/grandey/p17c-marc-comparison/tree/master/manage_data][manage_data/]] contains information and scripts for *managing* the simulation *output data*. [[https://github.com/grandey/p17c-marc-comparison/blob/master/manage_data/data_management.org][data_management.org]] provides the details.
-6. [[https://github.com/grandey/p17c-marc-comparison/tree/master/analysis_prelim][analysis_prelim/]] contains scripts used for *preliminary analysis* of the simulation output data.
-7. [[https://github.com/grandey/p17c-marc-comparison/tree/master/analysis_draft2017b/][analysis_draft2017b/]] contains scripts used for the *final analysis* of the simulation output data, including generation of the *figures* included in the manuscript.
+2. [[https://github.com/grandey/p17c-marc-comparison/tree/master/input_data_p17c][input_data_p17c/]] contains information and scripts relating to the *MARC input data*.
+3. [[https://github.com/grandey/p17c-marc-comparison/tree/master/input_data_p17c_mam7][input_data_p17c_mam7/]] contains a script for producing the *year-1850 MAM7 ammonia emissions*.
+4. [[https://github.com/grandey/p17c-marc-comparison/tree/master/user_nl_cam][user_nl_cam/]] contains the =user_nl_cam= namelist files for the simulations.
+5. [[https://github.com/grandey/p17c-marc-comparison/tree/master/config_simulations][config_simulations/]] contains information and scripts for *creating, building, and submitting* the simulations. [[https://github.com/grandey/p17c-marc-comparison/blob/master/config_simulations/config_comparison_simulations.org][config_comparison_simulations.org]] and [[https://github.com/grandey/p17c-marc-comparison/blob/master/config_simulations/config_timing_simulations.org][config_timing_simulations.org]] are used to generate the scripts.
+6. [[https://github.com/grandey/p17c-marc-comparison/tree/master/manage_data][manage_data/]] contains information and scripts for *managing* the simulation *output data*. [[https://github.com/grandey/p17c-marc-comparison/blob/master/manage_data/data_management.org][data_management.org]] provides the details.
+7. [[https://github.com/grandey/p17c-marc-comparison/tree/master/analysis_prelim][analysis_prelim/]] contains scripts used for *preliminary analysis* of the simulation output data.
+8. [[https://github.com/grandey/p17c-marc-comparison/tree/master/analysis_draft2017b/][analysis_draft2017b/]] contains scripts used for the *final analysis* of the simulation output data, including generation of the *figures* included in the manuscript.
 
 ** Model input and output data
 The model input data and the subset of the model output data analysed have been uploaded to Figshare: https://doi.org/10.6084/m9.figshare.5687812.
