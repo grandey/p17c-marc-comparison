@@ -69,5 +69,7 @@ CLOSED: [2018-07-30 Mon 15:39]
 CLOSED: [2018-08-03 Fri 17:27]
 ***** DONE Update Figshare repository for v6 draft
 CLOSED: [2018-08-03 Fri 19:50]
+***** DONE Re-run analysis using v7 of Figshare repository, to check that required data have been uploaded
+CLOSED: [2018-08-17 Fri 17:11]
 *** Still to-do
-
+***** TODO Update zenodo publication of Github repository for v7 draft manuscript
